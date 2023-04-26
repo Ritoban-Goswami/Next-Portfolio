@@ -11,10 +11,11 @@ function Hero({}: Props) {
   return (
     <div className="relative flex justify-between items-center min-h-[90vh]">
       <Image
-        className="absolute top-[0] left-[-23%] rotate-[30deg]"
+        className="absolute z-[5] top-[0] left-[-23%] rotate-[30deg]"
         src={curvedLine1}
         alt="curved-line-1"
       />
+      <div className="absolute w-28 h-28 bg-red-600 top-[17%] left-[-4%] rounded-full opacity-80 blur-2xl animate-blob"></div>
       <Image
         className="absolute bottom-[9%] left-[-14%]"
         src={curvedLine3}

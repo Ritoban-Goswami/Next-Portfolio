@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       fontFamily: {
         inter: ["var(--font-inter)", ...fontFamily.sans],
+        courgette: ["var(--font-courgette)", ...fontFamily.sans],
       },
       animation: {
         blob: "blob 10s ease-in-out infinite",

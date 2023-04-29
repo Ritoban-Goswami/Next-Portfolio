@@ -9,11 +9,11 @@ type Props = {};
 
 function Header({}: Props) {
   return (
-    <header className="flex justify-between items-center -mx-20 min-h-[10vh]">
+    <header className="flex justify-between items-center py-4 -mx-8 min-h-[10vh]">
       <Link href="/">
         <Image src={HeaderLogo} alt="Header Logo" className="w-6/12"></Image>
       </Link>
-      <nav className="text-lg flex items-center font-bold">
+      <nav className="text-lg flex items-center font-medium">
         <Link href="#about">About</Link>
         <Link className="pl-14" href="#projects">
           Projects

@@ -15,32 +15,35 @@ export default function Home() {
   return (
     <>
       <main
-        className={`container mx-auto px-20 ${inter.variable} font-inter snap-mandatory`}
+        className={`${inter.variable} font-inter overflow-y-scroll max-h-screen snap-y snap-mandatory overflow-x-clip scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-[#AD0000]`}
       >
-        <section id="hero" className="min-h-screen snap-center">
+        <section
+          id="hero"
+          className="container mx-auto px-20 h-screen snap-center"
+        >
           <Header />
           <Hero />
         </section>
         <section
           id="about"
-          className="min-h-screen flex items-center snap-center"
+          className="container mx-auto px-20 h-screen flex items-center snap-center"
         >
           <About />
         </section>
         <section
           id="projects"
-          className="min-h-screen flex items-center snap-center"
+          className="container mx-auto px-20 h-screen flex items-center snap-center"
         >
           <Projects />
         </section>
         <section
           id="contact"
-          className="min-h-screen flex items-center snap-center"
+          className="container mx-auto px-20 h-screen flex items-center flex-col justify-between snap-center"
         >
           <ContactForm />
+          <Footer />
         </section>
       </main>
-      <Footer />
     </>
   );
 }

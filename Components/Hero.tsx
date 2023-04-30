@@ -18,7 +18,7 @@ function Hero({}: Props) {
   return (
     <div className="relative flex justify-between items-center min-h-[90vh]">
       <Image
-        className="absolute z-[5] top-[0] left-[-23%] rotate-[30deg]"
+        className="absolute z-[5] top-[-5%] left-[-23%] rotate-[30deg]"
         src={curvedLine1}
         alt="curved-line-1"
       />
@@ -44,7 +44,7 @@ function Hero({}: Props) {
         <Image className="relative z-10" src={heroImage} alt="Hero Image" />
       </div>
       <Image
-        className="absolute bottom-[5%] left-[68%] rotate-[363deg]"
+        className="absolute bottom-[5%] left-[70%] rotate-[363deg]"
         src={curvedLine2}
         alt="curved-line-2"
       />

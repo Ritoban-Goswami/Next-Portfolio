@@ -4,7 +4,7 @@ type Props = {};
 
 function ContactForm({}: Props) {
   return (
-    <div className="w-full">
+    <div className="w-full self-center">
       {/* <h3 className="text-6xl font-semibold mb-12">
         Thanks For Taking The Time To Reach Out
       </h3>

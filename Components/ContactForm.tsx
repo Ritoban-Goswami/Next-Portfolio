@@ -1,10 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 type Props = {};
 
 function ContactForm({}: Props) {
   return (
-    <div className="w-full self-center">
+    <motion.div
+      className="w-full self-center"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.85 }}
+    >
       {/* <h3 className="text-6xl font-semibold mb-12">
         Thanks For Taking The Time To Reach Out
       </h3>
@@ -21,7 +27,7 @@ function ContactForm({}: Props) {
         <textarea name="message" id="message"></textarea>
       </form> */}
       Contact Form To be done later
-    </div>
+    </motion.div>
   );
 }
 

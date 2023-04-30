@@ -4,12 +4,18 @@ import Image from "next/image";
 import HeaderLogo from "../public/header-logo.png";
 import { BsMoonStarsFill } from "react-icons/bs";
 import { BsSunFill } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 type Props = {};
 
 function Header({}: Props) {
   return (
-    <header className="flex justify-between items-center py-4 -mx-8 min-h-[10vh]">
+    <motion.header
+      className="flex justify-between items-center py-4 -mx-8 min-h-[10vh]"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.85 }}
+    >
       <Link href="/">
         <Image src={HeaderLogo} alt="Header Logo" className="w-6/12"></Image>
       </Link>
@@ -26,7 +32,7 @@ function Header({}: Props) {
           {/* <BsSunFill /> */}
         </Link>
       </nav>
-    </header>
+    </motion.header>
   );
 }
 

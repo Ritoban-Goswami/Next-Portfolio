@@ -5,6 +5,7 @@ import curvedLine1 from "../public/svg/curved-line.svg";
 import curvedLine2 from "../public/svg/curved-line-2.svg";
 import curvedLine3 from "../public/svg/curved-line-3.svg";
 import { Courgette } from "next/font/google";
+import { motion } from "framer-motion";
 
 const courgette = Courgette({
   subsets: ["latin"],
@@ -16,7 +17,12 @@ type Props = {};
 
 function Hero({}: Props) {
   return (
-    <div className="relative flex justify-between items-center min-h-[90vh]">
+    <motion.div
+      className="relative flex justify-between items-center min-h-[90vh]"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.85 }}
+    >
       <Image
         className="absolute z-[5] top-[-5%] left-[-23%] rotate-[30deg]"
         src={curvedLine1}
@@ -48,7 +54,7 @@ function Hero({}: Props) {
         src={curvedLine2}
         alt="curved-line-2"
       />
-    </div>
+    </motion.div>
   );
 }
 

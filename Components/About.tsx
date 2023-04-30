@@ -1,10 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 type Props = {};
 
 function About({}: Props) {
   return (
-    <div className="flex justify-between">
+    <motion.div
+      className="flex justify-between"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.85 }}
+    >
       <div className="flex flex-col w-5/12">
         <h3 className="text-5xl font-semibold mb-12">About Me</h3>
         <p className="text-xl text-neutral-400">
@@ -51,7 +57,7 @@ function About({}: Props) {
           </span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

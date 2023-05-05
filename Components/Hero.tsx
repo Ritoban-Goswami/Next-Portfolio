@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import heroImage from "../public/personBlob.png";
-import curvedLine1 from "../public/svg/curved-line.svg";
-import curvedLine2 from "../public/svg/curved-line-2.svg";
-import curvedLine3 from "../public/svg/curved-line-3.svg";
+import CurvedLine1 from "../public/svg/curved-line.svg";
+import CurvedLine2 from "../public/svg/curved-line-2.svg";
+import CurvedLine3 from "../public/svg/curved-line-3.svg";
 import { Courgette } from "next/font/google";
 import { motion } from "framer-motion";
 
@@ -23,11 +23,7 @@ function Hero({}: Props) {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.85 }}
     >
-      <Image
-        className="absolute z-[5] top-[-5%] left-[-23%] rotate-[30deg]"
-        src={curvedLine1}
-        alt="curved-line-1"
-      />
+      <CurvedLine1 className="absolute z-[5] top-[-5%] left-[-23%] rotate-[30deg]" />
       {/* <div className="absolute w-28 h-28 bg-red-600 top-[17%] left-[-4%] rounded-full opacity-80 blur-2xl animate-blob"></div> */}
       {/* <Image
         className="absolute bottom-[9%] left-[-14%]"
@@ -49,11 +45,7 @@ function Hero({}: Props) {
       <div className="">
         <Image className="relative z-10" src={heroImage} alt="Hero Image" />
       </div>
-      <Image
-        className="absolute bottom-[5%] left-[70%] rotate-[363deg]"
-        src={curvedLine2}
-        alt="curved-line-2"
-      />
+      <CurvedLine2 className="absolute bottom-[5%] left-[70%] rotate-[363deg]" />
     </motion.div>
   );
 }

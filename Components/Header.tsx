@@ -2,8 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import HeaderLogo from "../public/header-logo.png";
-import { BsMoonStarsFill } from "react-icons/bs";
-import { BsSunFill } from "react-icons/bs";
+import DarkModeIcon from "../public/svg/dark-mode";
+import LightModeIcon from "../public/svg/light-mode";
 import { motion } from "framer-motion";
 
 type Props = {};
@@ -14,7 +14,7 @@ function Header({}: Props) {
       className="flex justify-between items-center py-4 -mx-8 min-h-[10vh]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.85 }}
+      transition={{ duration: 0.45 }}
     >
       <Link href="/">
         <Image src={HeaderLogo} alt="Header Logo" className="w-6/12"></Image>
@@ -28,8 +28,8 @@ function Header({}: Props) {
           Get In Touch
         </Link>
         <Link className="pl-14" href="/">
-          <BsMoonStarsFill />
-          {/* <BsSunFill /> */}
+          <DarkModeIcon className="text-2xl" />
+          {/* <LightModeIcon className="text-2xl" /> */}
         </Link>
       </nav>
     </motion.header>

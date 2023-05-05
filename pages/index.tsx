@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <main
-        className={`${inter.variable} font-inter overflow-y-scroll max-h-screen snap-y snap-mandatory overflow-x-clip scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-[#AD0000]`}
+        className={`${inter.variable} font-inter overflow-y-scroll max-h-screen snap-y snap-mandatory overflow-x-clip scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-[#ad000085]`}
       >
         <section
           id="hero"

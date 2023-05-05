@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import heroImage from "../public/personBlob.png";
-import CurvedLine1 from "../public/svg/curved-line.svg";
+import CurvedLine1 from "../public/svg/curved-line-1";
 import CurvedLine2 from "../public/svg/curved-line-2.svg";
 import CurvedLine3 from "../public/svg/curved-line-3.svg";
 import { Courgette } from "next/font/google";
@@ -23,7 +23,7 @@ function Hero({}: Props) {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.85 }}
     >
-      <CurvedLine1 className="absolute z-[5] top-[-5%] left-[-23%] rotate-[30deg]" />
+      <CurvedLine1 className="absolute z-[5] top-[-5%] left-[-23%]" />
       {/* <div className="absolute w-28 h-28 bg-red-600 top-[17%] left-[-4%] rounded-full opacity-80 blur-2xl animate-blob"></div> */}
       {/* <Image
         className="absolute bottom-[9%] left-[-14%]"

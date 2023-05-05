@@ -28,8 +28,8 @@ function Header({}: Props) {
           Get In Touch
         </Link>
         <Link className="pl-14" href="/">
-          <DarkModeIcon className="text-2xl" />
-          {/* <LightModeIcon className="text-2xl" /> */}
+          {/* <DarkModeIcon className="text-2xl" /> */}
+          <LightModeIcon className="text-2xl" />
         </Link>
       </nav>
     </motion.header>

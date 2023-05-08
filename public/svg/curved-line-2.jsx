@@ -1,48 +1,49 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-const CurvedLine1 = (props) => (
+
+const CurvedLine2 = (props) => (
   <motion.svg
-    width={615}
-    height={352}
-    viewBox="0 0 615 352"
+    width={762}
+    height={467}
+    viewBox="0 0 762 467"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     initial={{
       opacity: 0,
       scale: 1.8,
-      rotate: -27,
-      x: -100,
+      rotate: 41,
+      x: 200,
     }}
     animate={{
       scale: 1,
       opacity: 1,
-      rotate: 30,
+      rotate: 3,
       x: 0,
     }}
     transition={{
       duration: 1,
-      delay: 0.05,
+      delay: 0.1,
       ease: "easeInOut",
       type: "spring",
       stiffness: 150,
     }}
     {...props}
   >
-    <g filter="url(#filter0_i_6_3)">
+    <g filter="url(#filter0_i_7_6)">
       <path
-        d="M34 34.5C138.62 61.1429 493.5 59 558 162C622.5 265 540 351.5 464.5 304.5C389 257.5 354 205.5 354 205.5"
-        stroke="url(#paint0_linear_6_3)"
+        d="M34 34C138.62 60.6429 100.5 225 287 198C473.5 171 365 352.5 549 352.5C733 352.5 728 432.5 728 432.5"
+        stroke="url(#paint0_linear_7_6)"
         strokeWidth={67}
         strokeLinecap="round"
       />
     </g>
     <defs>
       <filter
-        id="filter0_i_6_3"
-        x={0.491974}
-        y={0.991974}
-        width={614.411}
-        height={356.039}
+        id="filter0_i_7_6"
+        x={0.491943}
+        y={0.491974}
+        width={761.2}
+        height={471.406}
         filterUnits="userSpaceOnUse"
         colorInterpolationFilters="sRGB"
       >
@@ -66,14 +67,14 @@ const CurvedLine1 = (props) => (
           type="matrix"
           values="0 0 0 0 0.678431 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
         />
-        <feBlend mode="normal" in2="shape" result="effect1_innerShadow_6_3" />
+        <feBlend mode="normal" in2="shape" result="effect1_innerShadow_7_6" />
       </filter>
       <linearGradient
-        id="paint0_linear_6_3"
-        x1={-132}
-        y1={-6.00002}
-        x2={725.046}
-        y2={148.237}
+        id="paint0_linear_7_6"
+        x1={-45.5}
+        y1={-17}
+        x2={882.261}
+        y2={112.353}
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#2A0000" />
@@ -82,4 +83,4 @@ const CurvedLine1 = (props) => (
     </defs>
   </motion.svg>
 );
-export default CurvedLine1;
+export default CurvedLine2;

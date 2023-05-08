@@ -10,28 +10,22 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        "primary-black": "#050505",
+        "primary-red": "#AD0000",
+      },
       animation: {
-        blob: "blob 10s ease-in-out infinite",
+        flicker: "flicker 1.5s infinite alternate",
       },
       keyframes: {
-        blob: {
-          "0%": {
-            transform: "translate(0, 0) scale(1) skew(0deg, 0deg)",
+        flicker: {
+          "0%, 19%, 21%, 23%, 25%, 54%, 56%, 100%": {
+            textShadow:
+              "-0.15rem -0.15rem .7rem #AD0000, 0.15rem 0.15rem .7rem #AD0000",
           },
-          "20%": {
-            transform: "translate(-5%, -5%) scale(0.8) skew(5deg, -5deg)",
-          },
-          "40%": {
-            transform: "translate(-10%, 5%) scale(1.2) skew(-5deg, 5deg)",
-          },
-          "60%": {
-            transform: "translate(5%, 10%) scale(0.9) skew(5deg, -5deg)",
-          },
-          "80%": {
-            transform: "translate(10%, -10%) scale(1.1) skew(-5deg, 5deg)",
-          },
-          "100%": {
-            transform: "translate(0, 0) scale(1) skew(0deg, 0deg)",
+          "20%, 24%, 55%": {
+            textShadow: "none",
+            boxShadow: "none",
           },
         },
       },

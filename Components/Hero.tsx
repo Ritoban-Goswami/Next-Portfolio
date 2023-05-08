@@ -53,22 +53,26 @@ function Hero({}: Props) {
       >
         <motion.h2
           variants={item}
-          className="text-neutral-600 text-6xl font-semibold mb-4"
+          className="text-neutral-600 text-7xl font-bold mb-4"
         >
           Hello, this is
         </motion.h2>
-        <motion.h1 variants={item} className="text-8xl font-bold mb-4">
+        <motion.h1
+          variants={item}
+          className="text-9xl font-extrabold mb-4 tracking-wide"
+          style={{ textShadow: "#AD0000 0.5rem 0px 0px" }}
+        >
           John Doe,
         </motion.h1>
         <motion.h2
           variants={item}
-          className="text-neutral-600 text-6xl font-semibold mb-4"
+          className="text-neutral-600 text-7xl font-bold mb-4"
         >
           I'm a
         </motion.h2>
         <motion.h3
           variants={item}
-          className={`text-5xl font-semibold ${courgette.className}`}
+          className={`text-6xl ${courgette.className} tracking-wider animate-flicker`}
         >
           Front End Web Developer, Designer.
         </motion.h3>

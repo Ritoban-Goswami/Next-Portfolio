@@ -1,5 +1,5 @@
 import React from "react";
-import Project from "@/Components/Project";
+import ProjectSlider from "@/Components/ProjectSlider";
 import { motion } from "framer-motion";
 
 type Props = {};
@@ -10,11 +10,15 @@ function Projects({}: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.85 }}
+      className="h-screen flex flex-col overflow-hidden max-w-full justify-evenly mx-auto"
     >
-      <h3 className="text-6xl font-semibold mb-12">
-        These Are Some Of My Recent Projects
+      <h3
+        className="text-7xl font-bold my-12 tracking-wider"
+        style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
+      >
+        Check Out My Recent Projects
       </h3>
-      <Project />
+      <ProjectSlider />
     </motion.div>
   );
 }

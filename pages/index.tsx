@@ -31,7 +31,8 @@ export default function Home() {
         </section>
         <section
           id="projects"
-          className="container mx-auto px-20 h-screen flex items-center snap-center"
+          // className="flex items-center"
+          className="container mx-auto px-20 snap-center"
         >
           <Projects />
         </section>

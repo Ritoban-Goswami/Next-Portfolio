@@ -1,9 +1,26 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 type Props = {};
 
 function About({}: Props) {
+  const container = {
+    hidden: { opacity: 1 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delay: 0.5,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 50 },
+    show: { opacity: 1, y: 0 },
+  };
+
   return (
     <motion.div
       className="flex justify-between"
@@ -12,7 +29,12 @@ function About({}: Props) {
       transition={{ duration: 0.85 }}
     >
       <div className="flex flex-col w-5/12">
-        <h3 className="text-5xl font-semibold mb-12">About Me</h3>
+        <h3
+          className="text-7xl font-bold mb-12 tracking-wider"
+          style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
+        >
+          About Me
+        </h3>
         <p className="text-xl text-neutral-400">
           Hi, this is Ritoban, I’m a Web Designer and a Front End Web Developer,
           using various web technologies to build digital products for different
@@ -21,41 +43,136 @@ function About({}: Props) {
           and problem-solving and I continue challenging myself to do things
           that are out of my comfort zone. and I love playing musical
           instruments, traveling, learning new languages, and exploring life in
-          general. I’d love to hear from you, feel free to contact me. You can
-          check out my Resume here.
+          general. I’d love to hear from you, feel free to{" "}
+          <Link className="text-primary-red tracking-widest" href={"#contact"}>
+            contact me.
+          </Link>
+          You can check out my{" "}
+          <Link
+            className="text-primary-red tracking-widest"
+            href={
+              "https://docs.google.com/document/d/184pnJeKjjObl9KucRJJB4QlqMAAXqfjk/edit?usp=sharing&ouid=110347533012246211464&rtpof=true&sd=true"
+            }
+            target="_blank"
+          >
+            Resume here.
+          </Link>
         </p>
       </div>
       <div className="w-5/12">
-        <h3 className="text-5xl font-semibold mb-12">Skills</h3>
-        <div className="flex flex-wrap">
-          <span className="text-neutral-600 text-lg uppercase m-3 bg-neutral-100 p-3 rounded-lg font-bold border-2 border-neutral-700 tracking-widest">
+        <h3
+          className="text-7xl font-bold mb-12 tracking-wider"
+          style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
+        >
+          Skills
+        </h3>
+        <motion.div
+          className="flex flex-wrap"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <motion.span
+            variants={item}
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.1 },
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="text-neutral-800 text-xl uppercase m-3 bg-secondary-grey py-3 px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
+          >
             HTML
-          </span>
-          <span className="text-neutral-600 text-lg uppercase m-3 bg-neutral-100 p-3 rounded-lg font-bold border-2 border-neutral-700 tracking-widest">
+          </motion.span>
+          <motion.span
+            variants={item}
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.1 },
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="text-neutral-800 text-xl uppercase m-3 bg-secondary-grey py-3 px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
+          >
             CSS
-          </span>
-          <span className="text-neutral-600 text-lg uppercase m-3 bg-neutral-100 p-3 rounded-lg font-bold border-2 border-neutral-700 tracking-widest">
+          </motion.span>
+          <motion.span
+            variants={item}
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.1 },
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="text-neutral-800 text-xl uppercase m-3 bg-secondary-grey py-3 px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
+          >
             JavaScript
-          </span>
-          <span className="text-neutral-600 text-lg uppercase m-3 bg-neutral-100 p-3 rounded-lg font-bold border-2 border-neutral-700 tracking-widest">
+          </motion.span>
+          <motion.span
+            variants={item}
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.1 },
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="text-neutral-800 text-xl uppercase m-3 bg-secondary-grey py-3 px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
+          >
             Bootstrap
-          </span>
-          <span className="text-neutral-600 text-lg uppercase m-3 bg-neutral-100 p-3 rounded-lg font-bold border-2 border-neutral-700 tracking-widest">
+          </motion.span>
+          <motion.span
+            variants={item}
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.1 },
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="text-neutral-800 text-xl uppercase m-3 bg-secondary-grey py-3 px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
+          >
             JQuery
-          </span>
-          <span className="text-neutral-600 text-lg uppercase m-3 bg-neutral-100 p-3 rounded-lg font-bold border-2 border-neutral-700 tracking-widest">
+          </motion.span>
+          <motion.span
+            variants={item}
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.1 },
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="text-neutral-800 text-xl uppercase m-3 bg-secondary-grey py-3 px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
+          >
             SASS
-          </span>
-          <span className="text-neutral-600 text-lg uppercase m-3 bg-neutral-100 p-3 rounded-lg font-bold border-2 border-neutral-700 tracking-widest">
+          </motion.span>
+          <motion.span
+            variants={item}
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.1 },
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="text-neutral-800 text-xl uppercase m-3 bg-secondary-grey py-3 px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
+          >
             GIT
-          </span>
-          <span className="text-neutral-600 text-lg uppercase m-3 bg-neutral-100 p-3 rounded-lg font-bold border-2 border-neutral-700 tracking-widest">
+          </motion.span>
+          <motion.span
+            variants={item}
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.1 },
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="text-neutral-800 text-xl uppercase m-3 bg-secondary-grey py-3 px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
+          >
             VS Code
-          </span>
-          <span className="text-neutral-600 text-lg uppercase m-3 bg-neutral-100 p-3 rounded-lg font-bold border-2 border-neutral-700 tracking-widest">
+          </motion.span>
+          <motion.span
+            variants={item}
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.1 },
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="text-neutral-800 text-xl uppercase m-3 bg-secondary-grey py-3 px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
+          >
             Figma
-          </span>
-        </div>
+          </motion.span>
+        </motion.div>
       </div>
     </motion.div>
   );

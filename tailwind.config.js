@@ -12,7 +12,12 @@ module.exports = {
     extend: {
       colors: {
         "primary-black": "#050505",
+        "primary-grey": "#2B2B2B",
+        "secondary-grey": "#D6D6D6",
         "primary-red": "#AD0000",
+      },
+      boxShadow: {
+        solid: "0.3rem 0.2rem 0px 0px rgba(0, 0, 0, 0.3)",
       },
       animation: {
         flicker: "flicker 1.5s infinite alternate",

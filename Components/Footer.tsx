@@ -10,7 +10,7 @@ function Footer({}: Props) {
   const d = new Date();
   let currentYear = d.getFullYear();
   return (
-    <footer className="py-4">
+    <footer className="py-4 h-[10%]">
       <div className="flex justify-center items-center py-2 text-2xl">
         <Link
           className="mr-2"

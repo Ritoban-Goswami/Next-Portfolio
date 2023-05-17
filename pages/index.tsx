@@ -38,7 +38,7 @@ export default function Home() {
         </section>
         <section
           id="contact"
-          className="container mx-auto px-20 h-screen flex items-center flex-col justify-between snap-center"
+          className="container mx-auto px-20 h-screen flex items-center flex-col snap-center"
         >
           <ContactForm />
           <Footer />

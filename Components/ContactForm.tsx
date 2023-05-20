@@ -1,16 +1,54 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import axios from "axios";
+import { useForm } from "react-hook-form";
+import { BsFillCheckCircleFill, BsExclamationCircleFill } from "react-icons/bs";
 
 type Props = {};
 
 function ContactForm({}: Props) {
-  const [formName, setFormName] = useState("");
-  const [formEmail, setFormEmail] = useState("");
-  const [formMessage, setFormMessage] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: {},
+  } = useForm();
+  const [successMessage, setSuccessMessage] = useState("");
+  const [formSent, setFormSent] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [showToast, setShowToast] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = () => {
-    console.log("Form Submission");
-  };
+  useEffect(() => {
+    if (showToast) {
+      const timer = setTimeout(() => {
+        setShowToast(false);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [showToast]);
+
+  function onSubmit(data: any) {
+    setSuccessMessage("");
+    setFormSent(false);
+
+    setIsSubmitting(true);
+
+    axios
+      .post("https://eo9o6mq79q0ewrn.m.pipedream.net", data)
+      .then((response) => {
+        setSuccessMessage(`Thanks For Signing Up! 👍`);
+        setFormSent(true);
+        setShowToast(true);
+      })
+      .catch((e) => {
+        setErrorMessage(`Something Went Wrong 🚫`);
+        setShowToast(true);
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
+  }
 
   return (
     <motion.div
@@ -26,18 +64,15 @@ function ContactForm({}: Props) {
         Got a Project? Let's Team Up and Make it Awesome!
       </h3>
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col justify-center w-6/12 px-12 h-4/6 rounded-lg bg-stone-950"
       >
         <h5 className="mb-12 font-bold text-3xl">Send a message</h5>
         <div className="relative z-0 w-full mb-12 group">
           <input
             type="text"
-            name="formName"
             id="formName"
-            onChange={(e) => {
-              setFormName(e.target.value);
-            }}
+            {...register("formName")}
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-neutral-100 dark:border-gray-600 dark:focus:border-primary-red focus:outline-none focus:ring-0 focus:border-primary-red peer"
             placeholder=" "
             required
@@ -52,11 +87,8 @@ function ContactForm({}: Props) {
         <div className="relative z-0 w-full mb-12 group">
           <input
             type="email"
-            name="formEmail"
+            {...register("formEmail")}
             id="formEmail"
-            onChange={(e) => {
-              setFormEmail(e.target.value);
-            }}
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-neutral-100 dark:border-gray-600 dark:focus:border-primary-red focus:outline-none focus:ring-0 focus:border-primary-red peer"
             placeholder=" "
             required
@@ -71,10 +103,7 @@ function ContactForm({}: Props) {
         <div className="relative z-0 w-full mb-12 group">
           <textarea
             id="formMessage"
-            name="formMessage"
-            onChange={(e) => {
-              setFormMessage(e.target.value);
-            }}
+            {...register("formMessage")}
             rows={5}
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-neutral-100 dark:border-gray-600 dark:focus:border-primary-red focus:outline-none focus:ring-0 focus:border-primary-red peer"
             placeholder=" "
@@ -87,11 +116,41 @@ function ContactForm({}: Props) {
           </label>
         </div>
         <button
-          type="submit"
-          className="self-center bg-transparent hover:bg-primary-red text-primary-red font-semibold hover:text-neutral-100 py-2 px-8 border-2 border-primary-red hover:border-transparent rounded-lg"
+          role="submit"
+          className="self-center w-40 h-10 flex justify-center items-center bg-transparent hover:bg-primary-red text-primary-red font-semibold hover:text-neutral-100 py-2 px-8 border-2 border-primary-red hover:border-transparent rounded-lg"
+          disabled={isSubmitting}
         >
-          Send
+          {isSubmitting ? (
+            <div
+              className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+              role="status"
+            ></div>
+          ) : (
+            "Submit"
+          )}
         </button>
+        <AnimatePresence>
+          {showToast && (
+            <motion.div
+              id="form-toast"
+              className="fixed top-5 left-1/2 -translate-x-2/4 flex items-center max-w-xs p-4 bg-stone-950 rounded-lg"
+              role="alert"
+              initial={{ y: -20 }}
+              animate={{ y: 0 }}
+              exit={{ y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              {formSent ? (
+                <BsFillCheckCircleFill />
+              ) : (
+                <BsExclamationCircleFill className="text-primary-red" />
+              )}
+              <div className="pl-2 text-sm font-semibold">
+                {formSent ? successMessage : errorMessage}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </form>
     </motion.div>
   );

@@ -1,13 +1,26 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import projectImgBob from "../public/project assets/1. Bob.png";
 
 type Props = {};
 
 const ProjectSlide = (props: Props) => {
+  const item = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  };
+
   return (
-    <div className="">
+    <motion.div
+      variants={item}
+      whileHover={{
+        y: -8,
+        transition: { duration: 0.1 },
+      }}
+      className=""
+    >
       {/* <div className="w-5/12"> */}
       <Image
         className="rounded-lg"
@@ -35,7 +48,7 @@ const ProjectSlide = (props: Props) => {
           Source Code
         </Link>
       </div> */}
-    </div>
+    </motion.div>
   );
 };
 

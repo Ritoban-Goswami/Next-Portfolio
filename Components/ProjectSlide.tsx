@@ -7,15 +7,15 @@ type Props = {};
 
 const ProjectSlide = (props: Props) => {
   return (
-    <div className="flex justify-between items-center w-full flex-shrink-0 snap-center py-20">
-      <div className="w-5/12">
-        <Image
-          className="rounded-lg"
-          src={projectImgBob}
-          alt="Bob dylan Project Image"
-        ></Image>
-      </div>
-      <div className="w-5/12">
+    <div className="">
+      {/* <div className="w-5/12"> */}
+      <Image
+        className="rounded-lg"
+        src={projectImgBob}
+        alt="Bob dylan Project Image"
+      ></Image>
+      {/* </div> */}
+      {/* <div className="w-5/12">
         <Link href="https://ritoban-goswami.github.io/Bob-Dylan-Landing-Page/">
           <h4 className="text-4xl font-semibold mb-8">
             The Freewheelin' Bob Dylan
@@ -34,7 +34,7 @@ const ProjectSlide = (props: Props) => {
         >
           Source Code
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };

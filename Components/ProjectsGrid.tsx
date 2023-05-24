@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectSlide from "./ProjectSlide";
+import ProjectElement from "./ProjectElement";
 import { motion } from "framer-motion";
 
 type Props = {};
@@ -19,7 +19,7 @@ function ProjectsGrid({}: Props) {
   };
 
   for (let i = 0; i < 4; i++) {
-    slides.push(<ProjectSlide key={i} />);
+    slides.push(<ProjectElement key={i} />);
   }
 
   return (

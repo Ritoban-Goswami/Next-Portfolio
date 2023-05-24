@@ -13,7 +13,7 @@ const ProjectElement = (props: Props) => {
   };
 
   return (
-    <Link href="https://ritoban-goswami.github.io/Bob-Dylan-Landing-Page/">
+    <Link href="/projects/freewheelin-bob-dylan">
       <motion.div
         variants={item}
         whileHover={{

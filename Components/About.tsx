@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import AboutSVG from "@/public/svg/aboutSVG";
 
 type Props = {};
 
@@ -28,22 +29,38 @@ function About({}: Props) {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.85 }}
     >
+      <div className="w-5/12">
+        <AboutSVG className="w-10/12 mx-auto" />
+      </div>
       <div className="flex flex-col w-5/12">
         <h3
           className="text-7xl font-bold mb-12 tracking-wider"
           style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
         >
-          About Me
+          Over the years,
         </h3>
-        <p className="text-xl text-neutral-400">
-          Hi, this is Ritoban, I’m a Web Designer and a Front End Web Developer,
-          using various web technologies to build digital products for different
-          niches and different industries. I think the work you want to do
-          defines you more than the work you’ve done. I love to keep learning,
-          and problem-solving and I continue challenging myself to do things
-          that are out of my comfort zone. and I love playing musical
-          instruments, traveling, learning new languages, and exploring life in
-          general. I’d love to hear from you, feel free to{" "}
+        <div className="text-xl text-neutral-400">
+          <p className="mb-3">
+            I've been a Web Designer and Front End Web Developer, using various
+            technologies to build digital products for different industries. I
+            believe that the work I aspire to do defines me more than what I
+            have already accomplished. I'm driven by a love for learning,
+            problem-solving, and pushing myself outside of my comfort zone.
+            Alongside my professional pursuits, I enjoy playing musical
+            instruments, traveling, learning new languages, and exploring life.
+          </p>
+          <p className="mb-3">
+            In my journey, I've developed a strong commitment to delivering
+            exceptional results for clients. Collaboration and effective
+            communication are crucial in understanding their unique needs. By
+            fostering strong client-designer relationships, I create tailor-made
+            solutions that surpass expectations. I take pride in attention to
+            detail and strive for pixel-perfect designs that combine aesthetics
+            with functionality. With a solid foundation in web technologies, I
+            stay up-to-date with the latest trends, ensuring my work remains
+            innovative.
+          </p>
+          I’d love to hear from you, feel free to{" "}
           <Link className="text-primary-red tracking-widest" href={"#contact"}>
             contact me.
           </Link>
@@ -57,122 +74,7 @@ function About({}: Props) {
           >
             Resume here.
           </Link>
-        </p>
-      </div>
-      <div className="w-5/12">
-        <h3
-          className="text-7xl font-bold mb-12 tracking-wider"
-          style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
-        >
-          Skills
-        </h3>
-        <motion.div
-          className="flex flex-wrap"
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-          <motion.span
-            variants={item}
-            whileHover={{
-              scale: 1.1,
-              transition: { duration: 0.1 },
-            }}
-            whileTap={{ scale: 0.9 }}
-            className="text-neutral-800 text-xl uppercase m-3 bg-secondary-grey py-3 px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
-          >
-            HTML
-          </motion.span>
-          <motion.span
-            variants={item}
-            whileHover={{
-              scale: 1.1,
-              transition: { duration: 0.1 },
-            }}
-            whileTap={{ scale: 0.9 }}
-            className="text-neutral-800 text-xl uppercase m-3 bg-secondary-grey py-3 px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
-          >
-            CSS
-          </motion.span>
-          <motion.span
-            variants={item}
-            whileHover={{
-              scale: 1.1,
-              transition: { duration: 0.1 },
-            }}
-            whileTap={{ scale: 0.9 }}
-            className="text-neutral-800 text-xl uppercase m-3 bg-secondary-grey py-3 px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
-          >
-            JavaScript
-          </motion.span>
-          <motion.span
-            variants={item}
-            whileHover={{
-              scale: 1.1,
-              transition: { duration: 0.1 },
-            }}
-            whileTap={{ scale: 0.9 }}
-            className="text-neutral-800 text-xl uppercase m-3 bg-secondary-grey py-3 px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
-          >
-            Bootstrap
-          </motion.span>
-          <motion.span
-            variants={item}
-            whileHover={{
-              scale: 1.1,
-              transition: { duration: 0.1 },
-            }}
-            whileTap={{ scale: 0.9 }}
-            className="text-neutral-800 text-xl uppercase m-3 bg-secondary-grey py-3 px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
-          >
-            JQuery
-          </motion.span>
-          <motion.span
-            variants={item}
-            whileHover={{
-              scale: 1.1,
-              transition: { duration: 0.1 },
-            }}
-            whileTap={{ scale: 0.9 }}
-            className="text-neutral-800 text-xl uppercase m-3 bg-secondary-grey py-3 px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
-          >
-            SASS
-          </motion.span>
-          <motion.span
-            variants={item}
-            whileHover={{
-              scale: 1.1,
-              transition: { duration: 0.1 },
-            }}
-            whileTap={{ scale: 0.9 }}
-            className="text-neutral-800 text-xl uppercase m-3 bg-secondary-grey py-3 px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
-          >
-            GIT
-          </motion.span>
-          <motion.span
-            variants={item}
-            whileHover={{
-              scale: 1.1,
-              transition: { duration: 0.1 },
-            }}
-            whileTap={{ scale: 0.9 }}
-            className="text-neutral-800 text-xl uppercase m-3 bg-secondary-grey py-3 px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
-          >
-            VS Code
-          </motion.span>
-          <motion.span
-            variants={item}
-            whileHover={{
-              scale: 1.1,
-              transition: { duration: 0.1 },
-            }}
-            whileTap={{ scale: 0.9 }}
-            className="text-neutral-800 text-xl uppercase m-3 bg-secondary-grey py-3 px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
-          >
-            Figma
-          </motion.span>
-        </motion.div>
+        </div>
       </div>
     </motion.div>
   );

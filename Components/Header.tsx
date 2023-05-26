@@ -21,6 +21,9 @@ function Header({}: Props) {
       </Link>
       <nav className="text-lg flex items-center font-medium">
         <Link href="#about">About</Link>
+        <Link className="pl-14" href="#experience-skills">
+          Experience
+        </Link>
         <Link className="pl-14" href="#projects">
           Projects
         </Link>

@@ -32,14 +32,14 @@ function ExperienceSkills({}: Props) {
 
   return (
     <motion.div
-      className="flex justify-between"
+      className="flex justify-between flex-col gap-y-20 lg:flex-row lg:gap-x-8"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.85 }}
     >
-      <div className="flex flex-col w-5/12">
+      <div className="flex flex-col">
         <h3
-          className="text-7xl font-bold mb-12 tracking-wider"
+          className="text-4xl xl:text-7xl font-bold mb-12 tracking-wider"
           style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
         >
           Experience
@@ -54,9 +54,9 @@ function ExperienceSkills({}: Props) {
           {experiences}
         </motion.div>
       </div>
-      <div className="w-5/12">
+      <div className="">
         <h3
-          className="text-7xl font-bold mb-12 tracking-wider"
+          className="text-4xl xl:text-7xl font-bold mb-12 tracking-wider"
           style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
         >
           Skills

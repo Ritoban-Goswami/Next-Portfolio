@@ -13,7 +13,7 @@ function Projects({}: Props) {
       className="flex flex-col justify-evenly items-center h-[95%]"
     >
       <h3
-        className="text-7xl font-bold my-12 tracking-wider"
+        className="text-4xl xl:text-7xl font-bold my-12 tracking-wider"
         style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
       >
         My Recent Projects

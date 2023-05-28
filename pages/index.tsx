@@ -11,35 +11,40 @@ export default function Home() {
     <>
       <section
         id="hero"
-        className="container mx-auto px-20 h-screen snap-center"
+        // className="snap-center"
+        // className="container mx-auto px-20 h-screen snap-center"
       >
-        <Header />
+        {/* <Header /> */}
         <Hero />
       </section>
       <section
         id="about"
-        className="container mx-auto px-20 h-screen flex items-center snap-center"
+        // className="flex items-center snap-center"
+        // className="container mx-auto px-20 h-screen flex items-center snap-center"
       >
         <About />
       </section>
       <section
         id="experience-skills"
-        className="container mx-auto px-20 h-screen flex items-center snap-center"
+        // className="flex items-center snap-center"
+        // className="container mx-auto px-20 h-screen flex items-center snap-center"
       >
         <ExperienceSkills />
       </section>
       <section
         id="projects"
-        className="container mx-auto px-20 h-screen flex items-center snap-center"
+        // className="flex items-center snap-center"
+        // className="container mx-auto px-20 h-screen flex items-center snap-center"
       >
         <Projects />
       </section>
       <section
         id="contact"
-        className="container mx-auto px-20 h-screen flex items-center flex-col snap-center"
+        // className="flex items-center flex-col snap-center"
+        // className="container mx-auto px-20 h-screen flex items-center flex-col snap-center"
       >
         <ContactForm />
-        <Footer />
+        {/* <Footer /> */}
       </section>
     </>
   );

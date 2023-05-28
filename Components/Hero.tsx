@@ -33,12 +33,12 @@ function Hero({}: Props) {
 
   return (
     <motion.div
-      className="relative flex justify-between items-center min-h-[90vh]"
+      className="relative flex flex-col sm:flex-row justify-between items-center min-h-full"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.85 }}
     >
-      <CurvedLine1 className="absolute z-[5] top-[-5%] left-[-23%]" />
+      {/* <CurvedLine1 className="absolute z-[5] top-[-5%] left-[-23%]" /> */}
       {/* <div className="absolute w-28 h-28 bg-red-600 top-[17%] left-[-4%] rounded-full opacity-80 blur-2xl animate-blob"></div> */}
       {/* <Image
         className="absolute bottom-[9%] left-[-14%]"
@@ -53,26 +53,26 @@ function Hero({}: Props) {
       >
         <motion.h2
           variants={item}
-          className="text-neutral-600 text-7xl font-bold mb-4"
+          className="text-neutral-600 text-3xl lg:text-5xl font-bold mb-4"
         >
           Hello, this is
         </motion.h2>
         <motion.h1
           variants={item}
-          className="text-9xl font-extrabold mb-4 tracking-wide"
+          className="text-5xl lg:text-7xl font-extrabold mb-4 tracking-wide"
           style={{ textShadow: "#AD0000 0.5rem 0px 0px" }}
         >
           John Doe,
         </motion.h1>
         <motion.h2
           variants={item}
-          className="text-neutral-600 text-7xl font-bold mb-4"
+          className="text-neutral-600 text-3xl lg:text-5xl font-bold mb-4"
         >
           I'm a
         </motion.h2>
         <motion.h3
           variants={item}
-          className={`text-6xl ${courgette.className} tracking-wider animate-flicker`}
+          className={`text-4xl lg:text-6xl ${courgette.className} tracking-wider animate-flicker`}
         >
           Front End Web Developer, Designer.
         </motion.h3>
@@ -85,7 +85,7 @@ function Hero({}: Props) {
           priority={true}
         />
       </div>
-      <CurvedLine2 className="absolute bottom-[5%] left-[70%]" />
+      {/* <CurvedLine2 className="absolute bottom-[5%] left-[70%]" /> */}
     </motion.div>
   );
 }

@@ -105,7 +105,7 @@ export default function Page({}: Props) {
           </div>
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

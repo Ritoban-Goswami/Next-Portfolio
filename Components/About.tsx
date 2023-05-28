@@ -24,17 +24,17 @@ function About({}: Props) {
 
   return (
     <motion.div
-      className="flex justify-between"
+      className="flex justify-between flex-col"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.85 }}
     >
-      <div className="w-5/12">
+      <div className="lg:w-5/12">
         <AboutSVG className="w-10/12 mx-auto" />
       </div>
-      <div className="flex flex-col w-5/12">
+      <div className="flex flex-col lg:w-5/12">
         <h3
-          className="text-7xl font-bold mb-12 tracking-wider"
+          className="text-4xl xl:text-7xl font-bold mb-12 tracking-wider"
           style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
         >
           Over the years,
@@ -49,7 +49,7 @@ function About({}: Props) {
             Alongside my professional pursuits, I enjoy playing musical
             instruments, traveling, learning new languages, and exploring life.
           </p>
-          <p className="mb-3">
+          {/* <p className="mb-3">
             In my journey, I've developed a strong commitment to delivering
             exceptional results for clients. Collaboration and effective
             communication are crucial in understanding their unique needs. By
@@ -59,7 +59,7 @@ function About({}: Props) {
             with functionality. With a solid foundation in web technologies, I
             stay up-to-date with the latest trends, ensuring my work remains
             innovative.
-          </p>
+          </p> */}
           I’d love to hear from you, feel free to{" "}
           <Link className="text-primary-red tracking-widest" href={"#contact"}>
             contact me.

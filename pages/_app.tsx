@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { Inter } from "next/font/google";
+import Layout from "@/Components/layout";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,11 +19,9 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      <main
-        className={`${inter.className} overflow-y-scroll max-h-screen snap-y snap-mandatory overflow-x-clip scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-[#ad000085]`}
-      >
+      <Layout>
         <Component {...pageProps} />
-      </main>
+      </Layout>
     </>
   );
 }

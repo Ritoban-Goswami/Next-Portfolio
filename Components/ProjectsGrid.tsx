@@ -24,7 +24,7 @@ function ProjectsGrid({}: Props) {
 
   return (
     <motion.div
-      className="grid grid-cols-2 gap-x-8 gap-y-12 mx-auto w-10/12"
+      className="grid lg:grid-cols-2 gap-6 md:gap-14 lg:gap-8 mx-auto w-11/12"
       variants={container}
       initial="hidden"
       whileInView="show"

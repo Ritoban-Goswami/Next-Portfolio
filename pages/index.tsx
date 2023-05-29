@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <section
         id="hero"
-        // className="snap-center"
+        className="mt-20 mb-16 md:mt-24 lg:mt-5 lg:m-b-0 lg:h-screen flex items-center justify-center"
         // className="container mx-auto px-20 h-screen snap-center"
       >
         {/* <Header /> */}
@@ -19,28 +19,28 @@ export default function Home() {
       </section>
       <section
         id="about"
-        // className="flex items-center snap-center"
+        className="my-16"
         // className="container mx-auto px-20 h-screen flex items-center snap-center"
       >
         <About />
       </section>
       <section
         id="experience-skills"
-        // className="flex items-center snap-center"
+        className="my-16"
         // className="container mx-auto px-20 h-screen flex items-center snap-center"
       >
         <ExperienceSkills />
       </section>
       <section
         id="projects"
-        // className="flex items-center snap-center"
+        className="my-16"
         // className="container mx-auto px-20 h-screen flex items-center snap-center"
       >
         <Projects />
       </section>
       <section
         id="contact"
-        // className="flex items-center flex-col snap-center"
+        className="my-16"
         // className="container mx-auto px-20 h-screen flex items-center flex-col snap-center"
       >
         <ContactForm />

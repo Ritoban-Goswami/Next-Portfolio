@@ -52,22 +52,28 @@ function ContactForm({}: Props) {
 
   return (
     <motion.div
-      className="w-full flex flex-col lg:flex-row justify-between h-[90%] items-center gap-x-12"
+      className="w-full flex flex-col lg:items-center lg:flex-row justify-between items-stretch gap-x-12"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.85 }}
     >
       <h3
-        className="text-4xl xl:text-7xl font-bold tracking-wider mb-16 lg:w-6/12"
+        className="hidden lg:inline-block lg:text-4xl xl:text-5xl font-bold tracking-wider mb-16 lg:w-6/12"
         style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
       >
         Got a Project? Let's Team Up and Make it Awesome!
       </h3>
+      <h3
+        className="lg:hidden text-2xl md:text-3xl font-bold tracking-wider mb-16 lg:w-6/12"
+        style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
+      >
+        Let's Make Your Project Awesome!
+      </h3>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col justify-center lg:w-6/12 px-12 lg:h-4/6 rounded-lg bg-stone-950"
+        className="flex flex-col justify-center lg:w-6/12 p-5 lg:px-8 lg:h-4/6 rounded-lg bg-stone-950"
       >
-        <h5 className="mb-12 font-bold text-3xl">Send a message</h5>
+        <h5 className="mb-12 font-bold text-xl lg:text-2xl">Send a message</h5>
         <div className="relative z-0 w-full mb-12 group">
           <input
             type="text"

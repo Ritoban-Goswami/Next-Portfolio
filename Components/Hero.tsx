@@ -33,7 +33,7 @@ function Hero({}: Props) {
 
   return (
     <motion.div
-      className="relative flex flex-col sm:flex-row justify-between items-center min-h-full"
+      className="w-full relative flex sm:flex-row justify-between items-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.85 }}
@@ -49,37 +49,37 @@ function Hero({}: Props) {
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative z-10 "
+        className="relative z-10"
       >
         <motion.h2
           variants={item}
-          className="text-neutral-600 text-3xl lg:text-5xl font-bold mb-4"
+          className="text-neutral-600 font-bold text-base sm:text-3xl lg:text-4xl xl:text-[2.5rem] mb-1 lg:mb-4"
         >
           Hello, this is
         </motion.h2>
         <motion.h1
           variants={item}
-          className="text-5xl lg:text-7xl font-extrabold mb-4 tracking-wide"
+          className="font-extrabold mb-1 tracking-wide text-3xl sm:text-5xl lg:text-6xl xl:text-[5rem] lg:mb-4"
           style={{ textShadow: "#AD0000 0.5rem 0px 0px" }}
         >
           John Doe,
         </motion.h1>
         <motion.h2
           variants={item}
-          className="text-neutral-600 text-3xl lg:text-5xl font-bold mb-4"
+          className="text-neutral-600 text-base sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-1 lg:mb-4"
         >
           I'm a
         </motion.h2>
         <motion.h3
           variants={item}
-          className={`text-4xl lg:text-6xl ${courgette.className} tracking-wider animate-flicker`}
+          className={`text-base sm:text-2xl lg:text-4xl xl:text-[2.65rem] ${courgette.className} tracking-wider animate-flicker`}
         >
           Front End Web Developer, Designer.
         </motion.h3>
       </motion.div>
-      <div className="">
+      <div className="w-5/12">
         <Image
-          className="relative z-10"
+          className="relative z-10 mx-auto max-w-[7.5rem] sm:max-w-[70%] lg:max-w-full xl:max-w-[20rem]"
           src={heroImage}
           alt="Hero Image"
           priority={true}

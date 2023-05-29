@@ -36,35 +36,35 @@ function Header({}: Props) {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.45 }}
     >
-      <nav className="flex justify-between mt-8 w-4/5 mx-auto">
+      <nav className="container flex justify-between px-3 mt-4 md:mt-6 lg:mt-8 mx-auto">
         <Link className="inline-block" href="/">
           <Image
             src={HeaderLogo}
             alt="Header Logo"
-            className="max-w-[3rem] lg:max-w-[5rem]"
+            className="max-w-[3rem] md:max-w-[4rem] lg:max-w-[5rem]"
           ></Image>
         </Link>
-        <div className="hidden text-lg xl:flex items-center justify-evenly px-2 w-2/5 font-semibold rounded-3xl backdrop-blur-xl">
+        <div className="hidden text-lg items-center justify-evenly px-2 font-semibold rounded-3xl backdrop-blur-xl md:flex md:w-3/5 xl:w-2/5">
           <Link
             href="#about"
-            className="pl-4 first:pl-0 transition-all hover:text-primary-red"
+            className="pl-2 first:pl-0 transition-all hover:text-primary-red"
           >
             About
           </Link>
           <Link
-            className="pl-4 first:pl-0 transition-all hover:text-primary-red"
+            className="pl-2 first:pl-0 transition-all hover:text-primary-red"
             href="#experience-skills"
           >
             Experience
           </Link>
           <Link
-            className="pl-4 first:pl-0 transition-all hover:text-primary-red"
+            className="pl-2 first:pl-0 transition-all hover:text-primary-red"
             href="#projects"
           >
             Projects
           </Link>
           <Link
-            className="pl-4 first:pl-0 transition-all hover:text-primary-red"
+            className="pl-2 first:pl-0 transition-all hover:text-primary-red"
             href="#contact"
           >
             Get In Touch
@@ -75,7 +75,7 @@ function Header({}: Props) {
           </Link>
         </div>
         <motion.div
-          className="relative xl:hidden flex items-center cursor-pointer"
+          className="relative md:hidden flex items-center cursor-pointer"
           onClick={() => toggleIsNavMenuOpen()}
         >
           {isNavMenuOpen ? (
@@ -85,7 +85,7 @@ function Header({}: Props) {
           )}
           {isNavMenuOpen && (
             <motion.div
-              className="absolute top-12 right-0 text-base flex flex-col items-end min-w-[10rem] p-3 font-semibold rounded-lg backdrop-blur-xl"
+              className="absolute top-12 right-0 text-sm flex flex-col items-end min-w-[10rem] p-3 font-semibold rounded-lg backdrop-blur-xl"
               variants={container}
               initial="hidden"
               whileInView="show"

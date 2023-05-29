@@ -12,22 +12,22 @@ function ExperienceCard({ isLastCard }: Props) {
     show: { opacity: 1 },
   };
   return (
-    <motion.div variants={item} className="rounded-md flex gap-x-4">
+    <motion.div variants={item} className="rounded-md flex gap-x-3">
       <div className="relative">
-        <BsCircleFill className="text-lg text-neutral-400" />
-        <div className="absolute top-0 left-1/2 -translate-x-2/4 w-0.5 h-full bg-neutral-400 " />
+        <BsCircleFill className="text-xs text-neutral-400" />
+        <div className="absolute top-0 left-1/2 -translate-x-2/4 w-[0.085rem] h-full bg-neutral-400 " />
       </div>
       <div className={!isLastCard ? "pb-11" : ""}>
         <Link target="_blank" href="https://appycodes.dev/">
-          <h3 className="text-xl font-semibold mb-4 group hover:cursor-pointer inline-flex items-center gap-x-3">
+          <h3 className="text-base lg:text-lg font-semibold mb-4 group hover:cursor-pointer inline-flex items-center gap-x-3">
             Associate Developer At Appycodes
             <FiArrowUpRight className="group-hover:text-primary-red transition-colors" />
           </h3>
         </Link>
-        <h4 className="text-base font-semibold text-neutral-300 mb-4">
+        <h4 className="text-sm lg:text-base font-semibold text-neutral-300 mb-4">
           September, 2022 - Present
         </h4>
-        <p className="text-sm font-normal text-neutral-400">
+        <p className="text-xs lg:text-sm font-normal text-neutral-400">
           This is a simple Landing Page dedicated to my favorite folk artist,
           Bob Dylan. I've used HTML, CSS, JavaScript, and Bootstrap for this
           project.

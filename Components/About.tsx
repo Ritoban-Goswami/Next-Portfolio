@@ -24,22 +24,22 @@ function About({}: Props) {
 
   return (
     <motion.div
-      className="flex justify-between flex-col"
+      className="flex justify-between items-center flex-col lg:flex-row"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.85 }}
     >
-      <div className="lg:w-5/12">
-        <AboutSVG className="w-10/12 mx-auto" />
+      <div className="hidden lg:block lg:w-5/12">
+        <AboutSVG className="max-w-[16rem] mx-auto" />
       </div>
-      <div className="flex flex-col lg:w-5/12">
+      <div className="flex flex-col lg:w-6/12">
         <h3
-          className="text-4xl xl:text-7xl font-bold mb-12 tracking-wider"
+          className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 tracking-wider"
           style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
         >
           Over the years,
         </h3>
-        <div className="text-xl text-neutral-400">
+        <div className="text-sm lg:text-base text-neutral-400">
           <p className="mb-3">
             I've been a Web Designer and Front End Web Developer, using various
             technologies to build digital products for different industries. I

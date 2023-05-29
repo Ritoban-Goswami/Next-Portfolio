@@ -39,7 +39,7 @@ function ExperienceSkills({}: Props) {
     >
       <div className="flex flex-col">
         <h3
-          className="text-4xl xl:text-7xl font-bold mb-12 tracking-wider"
+          className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-12 tracking-wider"
           style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
         >
           Experience
@@ -56,7 +56,7 @@ function ExperienceSkills({}: Props) {
       </div>
       <div className="">
         <h3
-          className="text-4xl xl:text-7xl font-bold mb-12 tracking-wider"
+          className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-12 tracking-wider"
           style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
         >
           Skills

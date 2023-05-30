@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 
 const CurvedLine2 = (props) => (
   <motion.svg
-    width={762}
-    height={467}
     viewBox="0 0 762 467"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -29,48 +27,17 @@ const CurvedLine2 = (props) => (
     }}
     {...props}
   >
-    <g filter="url(#filter0_i_7_6)">
+    <g filter="url(#a)">
       <path
-        d="M34 34C138.62 60.6429 100.5 225 287 198C473.5 171 365 352.5 549 352.5C733 352.5 728 432.5 728 432.5"
-        stroke="url(#paint0_linear_7_6)"
+        d="M34 34c104.62 26.643 66.5 191 253 164s78 154.5 262 154.5 179 80 179 80"
+        stroke="url(#b)"
         strokeWidth={67}
         strokeLinecap="round"
       />
     </g>
     <defs>
-      <filter
-        id="filter0_i_7_6"
-        x={0.491943}
-        y={0.491974}
-        width={761.2}
-        height={471.406}
-        filterUnits="userSpaceOnUse"
-        colorInterpolationFilters="sRGB"
-      >
-        <feFlood floodOpacity={0} result="BackgroundImageFix" />
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="BackgroundImageFix"
-          result="shape"
-        />
-        <feColorMatrix
-          in="SourceAlpha"
-          type="matrix"
-          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          result="hardAlpha"
-        />
-        <feOffset dx={0.178692} dy={9.82807} />
-        <feGaussianBlur stdDeviation={2.94842} />
-        <feComposite in2="hardAlpha" operator="arithmetic" k2={-1} k3={1} />
-        <feColorMatrix
-          type="matrix"
-          values="0 0 0 0 0.678431 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-        />
-        <feBlend mode="normal" in2="shape" result="effect1_innerShadow_7_6" />
-      </filter>
       <linearGradient
-        id="paint0_linear_7_6"
+        id="b"
         x1={-45.5}
         y1={-17}
         x2={882.261}
@@ -78,8 +45,30 @@ const CurvedLine2 = (props) => (
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#2A0000" />
-        <stop offset={1} stopColor="#CBCBCB" stopOpacity={0} />
+        <stop offset={1} stopColor="#424242" stopOpacity={0} />
       </linearGradient>
+      <filter
+        id="a"
+        x={0.492}
+        y={0.492}
+        width={761.2}
+        height={471.406}
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feColorMatrix
+          in="SourceAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dx={0.179} dy={9.828} />
+        <feGaussianBlur stdDeviation={2.948} />
+        <feComposite in2="hardAlpha" operator="arithmetic" k2={-1} k3={1} />
+        <feColorMatrix values="0 0 0 0 0.678431 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+        <feBlend in2="shape" result="effect1_innerShadow_7_6" />
+      </filter>
     </defs>
   </motion.svg>
 );

@@ -34,7 +34,7 @@ function About({}: Props) {
       </div>
       <div className="flex flex-col lg:w-6/12">
         <h3
-          className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 tracking-wider"
+          className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-10 tracking-wider"
           style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
         >
           Over the years,
@@ -49,7 +49,7 @@ function About({}: Props) {
             Alongside my professional pursuits, I enjoy playing musical
             instruments, traveling, learning new languages, and exploring life.
           </p>
-          {/* <p className="mb-3">
+          <p className="mb-3">
             In my journey, I've developed a strong commitment to delivering
             exceptional results for clients. Collaboration and effective
             communication are crucial in understanding their unique needs. By
@@ -59,7 +59,7 @@ function About({}: Props) {
             with functionality. With a solid foundation in web technologies, I
             stay up-to-date with the latest trends, ensuring my work remains
             innovative.
-          </p> */}
+          </p>
           I’d love to hear from you, feel free to{" "}
           <Link className="text-primary-red tracking-widest" href={"#contact"}>
             contact me.

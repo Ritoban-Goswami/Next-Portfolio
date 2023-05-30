@@ -53,33 +53,33 @@ function Hero({}: Props) {
       >
         <motion.h2
           variants={item}
-          className="text-neutral-600 font-bold text-base sm:text-3xl lg:text-4xl xl:text-[2.5rem] mb-1 lg:mb-4"
+          className="text-neutral-600 font-bold text-base sm:text-3xl lg:text-4xl xl:text-[2.5rem] 2xl:text-6xl mb-1 lg:mb-4"
         >
           Hello, this is
         </motion.h2>
         <motion.h1
           variants={item}
-          className="font-extrabold mb-1 tracking-wide text-3xl sm:text-5xl lg:text-6xl xl:text-[5rem] lg:mb-4"
+          className="font-extrabold mb-1 tracking-wide text-3xl sm:text-5xl lg:text-6xl xl:text-[5rem] 2xl:text-[7rem] lg:mb-4"
           style={{ textShadow: "#AD0000 0.5rem 0px 0px" }}
         >
           John Doe,
         </motion.h1>
         <motion.h2
           variants={item}
-          className="text-neutral-600 text-base sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-1 lg:mb-4"
+          className="text-neutral-600 text-base sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-1 lg:mb-4"
         >
           I'm a
         </motion.h2>
         <motion.h3
           variants={item}
-          className={`text-base sm:text-2xl lg:text-4xl xl:text-[2.65rem] ${courgette.className} tracking-wider animate-flicker`}
+          className={`text-base sm:text-2xl lg:text-4xl xl:text-[2.65rem] 2xl:text-5xl ${courgette.className} tracking-wider animate-flicker`}
         >
           Front End Web Developer, Designer.
         </motion.h3>
       </motion.div>
       <div className="w-5/12">
         <Image
-          className="relative z-10 mx-auto max-w-[7.5rem] sm:max-w-[70%] lg:max-w-full xl:max-w-[20rem]"
+          className="relative z-10 mx-auto max-w-[7.5rem] sm:max-w-[70%] lg:max-w-full xl:max-w-[20rem] 2xl:max-w-md"
           src={heroImage}
           alt="Hero Image"
           priority={true}

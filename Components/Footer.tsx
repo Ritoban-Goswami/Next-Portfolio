@@ -10,8 +10,8 @@ function Footer({}: Props) {
   const d = new Date();
   let currentYear = d.getFullYear();
   return (
-    <footer className="py-4 h-[10%]">
-      <div className="flex justify-center items-center py-2 text-2xl">
+    <footer className="py-4 lg:h-[10vh]">
+      <div className="flex justify-center items-center py-2 text-xl lg:text-2xl">
         <Link
           className="ml-5 first:ml-0 transition-all hover:text-primary-red"
           href="https://www.linkedin.com/in/ritoban-goswami-46b9b8233"
@@ -31,7 +31,7 @@ function Footer({}: Props) {
           <HiMail />
         </Link>
       </div>
-      <p className="text-center text-sm text-neutral-400 font-medium py-2">
+      <p className="text-center text-xs lg:text-sm text-neutral-400 font-medium px-1 pt-2">
         Copyright © {currentYear}{" "}
         <Link
           className="transition-all hover:text-primary-red"

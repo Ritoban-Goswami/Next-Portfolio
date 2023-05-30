@@ -14,7 +14,7 @@ export default function Layout({ children }: Props) {
       <Header />
       <main
         // className={`${inter.className} overflow-y-scroll max-h-screen snap-y snap-mandatory`}
-        className={`${inter.className} container mx-auto px-5 sm:px-10 lg:px-20`}
+        className={`${inter.className} container mx-auto px-5 sm:px-10 lg:px-20 snap-y snap-mandatory`}
       >
         {children}
       </main>

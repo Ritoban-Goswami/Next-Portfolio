@@ -16,7 +16,7 @@ function SkillElement({}: Props) {
         transition: { duration: 0.1 },
       }}
       whileTap={{ scale: 0.9 }}
-      className="text-neutral-800 text-lg sm:text-xl uppercase bg-secondary-grey p-2.5 py-1.5 sm:py-3 sm:px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
+      className="text-neutral-800 text-base sm:text-xl uppercase bg-secondary-grey p-2.5 py-1.5 sm:py-3 sm:px-5 rounded-xl font-bold border-2 border-neutral-800 tracking-wide lg:tracking-widest shadow-solid shadow-primary-red cursor-pointer select-none"
     >
       HTML
     </motion.span>

@@ -32,14 +32,14 @@ function ExperienceSkills({}: Props) {
 
   return (
     <motion.div
-      className="flex justify-between flex-col gap-y-20 lg:flex-row lg:gap-x-8"
+      className="flex justify-between flex-col gap-y-12 md:gap-y-16 lg:flex-row lg:gap-x-8"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.85 }}
     >
       <div className="flex flex-col">
         <h3
-          className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-12 tracking-wider"
+          className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12 tracking-wider"
           style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
         >
           Experience
@@ -56,7 +56,7 @@ function ExperienceSkills({}: Props) {
       </div>
       <div className="">
         <h3
-          className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-12 tracking-wider"
+          className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12 tracking-wider"
           style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
         >
           Skills

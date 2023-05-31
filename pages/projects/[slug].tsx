@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import projectImgBob from "../../public/project assets/1. Bob.png";
 import Link from "next/link";
-import Footer from "@/Components/Footer";
-import Header from "@/Components/Header";
 import SkillElement from "@/Components/SkillElement";
 
 type Props = {};
@@ -15,7 +13,6 @@ export default function Page({}: Props) {
 
   return (
     <>
-      {/* <Header /> */}
       <section className="mb-4">
         <div className="flex flex-col">
           <h1
@@ -71,7 +68,6 @@ export default function Page({}: Props) {
           </div>
         </div>
       </section>
-      {/* <Footer /> */}
     </>
   );
 }

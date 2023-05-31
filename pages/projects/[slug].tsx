@@ -30,7 +30,7 @@ export default function Page({}: Props) {
             alt="freewheelin-bob-dylan"
           />
           <div className="flex justify-between flex-col-reverse gap-y-8 md:flex-row mt-8 md:mt-16">
-            <p className="md:w-8/12 text-sm md:text-base text-neutral-400">
+            <p className="md:w-8/12 text-sm sm:text-base text-neutral-400">
               This is a simple Landing Page dedicated to my favorite folk
               artist, Bob Dylan. This page features an info section, a gallery
               where one can scroll through images, a Spotify section to listen

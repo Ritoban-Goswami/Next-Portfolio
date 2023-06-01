@@ -36,108 +36,111 @@ function Header({}: Props) {
     show: { opacity: 1, y: 0 },
   };
 
-  if (mounted)
-    return (
-      <motion.header
-        className="fixed inset-x-0 top-0 z-50"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.45 }}
-      >
-        <nav className="container flex justify-between px-3 mt-4 md:mt-6 lg:mt-8 mx-auto">
-          <Link className="inline-block" href="/">
-            <Image
-              src={HeaderLogo}
-              alt="Header Logo"
-              className="max-w-[3rem] md:max-w-[4rem] lg:max-w-[5rem]"
-            ></Image>
-          </Link>
-          <div className="hidden text-lg items-center justify-evenly px-2 font-semibold rounded-3xl backdrop-blur-xl md:flex md:w-3/5 xl:w-2/5">
-            <Link
-              href="#about"
-              className="pl-2 first:pl-0 transition-all hover:text-primary-red"
-            >
-              About
-            </Link>
-            <Link
-              className="pl-2 first:pl-0 transition-all hover:text-primary-red"
-              href="#experience-skills"
-            >
-              Experience
-            </Link>
-            <Link
-              className="pl-2 first:pl-0 transition-all hover:text-primary-red"
-              href="#projects"
-            >
-              Projects
-            </Link>
-            <Link
-              className="pl-2 first:pl-0 transition-all hover:text-primary-red"
-              href="#contact"
-            >
-              Get In Touch
-            </Link>
-            <span
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="cursor-pointer pl-4 first:pl-0 group"
-            >
-              {theme === "light" ? (
-                <DarkModeIcon className="text-2xl transition-all group-hover:text-blue-300" />
-              ) : (
-                <LightModeIcon className="text-2xl transition-all group-hover:text-amber-400" />
-              )}
-            </span>
-          </div>
-          <motion.div
-            className="relative md:hidden flex items-center cursor-pointer"
-            onClick={() => toggleIsNavMenuOpen()}
+  if (!mounted) {
+    return null;
+  }
+
+  return (
+    <motion.header
+      className="fixed inset-x-0 top-0 z-50"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.45 }}
+    >
+      <nav className="container flex justify-between px-3 mt-4 md:mt-6 lg:mt-8 mx-auto">
+        <Link className="inline-block" href="/">
+          <Image
+            src={HeaderLogo}
+            alt="Header Logo"
+            className="max-w-[3rem] md:max-w-[4rem] lg:max-w-[5rem]"
+          ></Image>
+        </Link>
+        <div className="hidden text-lg items-center justify-evenly px-2 font-semibold rounded-3xl backdrop-blur-xl md:flex md:w-3/5 xl:w-2/5">
+          <Link
+            href="#about"
+            className="pl-2 first:pl-0 transition-all hover:text-primary-red"
           >
-            {isNavMenuOpen ? (
-              <IoMdClose className="text-2xl" />
+            About
+          </Link>
+          <Link
+            className="pl-2 first:pl-0 transition-all hover:text-primary-red"
+            href="#experience-skills"
+          >
+            Experience
+          </Link>
+          <Link
+            className="pl-2 first:pl-0 transition-all hover:text-primary-red"
+            href="#projects"
+          >
+            Projects
+          </Link>
+          <Link
+            className="pl-2 first:pl-0 transition-all hover:text-primary-red"
+            href="#contact"
+          >
+            Get In Touch
+          </Link>
+          <span
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="cursor-pointer pl-4 first:pl-0 group"
+          >
+            {theme === "light" ? (
+              <DarkModeIcon className="text-2xl transition-all group-hover:text-blue-300" />
             ) : (
-              <GiHamburgerMenu className="text-2xl" />
+              <LightModeIcon className="text-2xl transition-all group-hover:text-amber-400" />
             )}
-            {isNavMenuOpen && (
-              <motion.div
-                className="absolute top-12 right-0 text-sm flex flex-col items-end min-w-[10rem] p-3 font-semibold rounded-lg backdrop-blur-xl"
-                variants={container}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
+          </span>
+        </div>
+        <motion.div
+          className="relative md:hidden flex items-center cursor-pointer"
+          onClick={() => toggleIsNavMenuOpen()}
+        >
+          {isNavMenuOpen ? (
+            <IoMdClose className="text-2xl" />
+          ) : (
+            <GiHamburgerMenu className="text-2xl" />
+          )}
+          {isNavMenuOpen && (
+            <motion.div
+              className="absolute top-12 right-0 text-sm flex flex-col items-end min-w-[10rem] p-3 font-semibold rounded-lg backdrop-blur-xl"
+              variants={container}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
+              <Link
+                href="#about"
+                className="pb-2 last:pb-0 transition-all hover:text-primary-red"
               >
-                <Link
-                  href="#about"
-                  className="pb-2 last:pb-0 transition-all hover:text-primary-red"
-                >
-                  <motion.span variants={item}>About</motion.span>
-                </Link>
-                <Link
-                  className="pb-2 last:pb-0 transition-all hover:text-primary-red"
-                  href="#experience-skills"
-                >
-                  <motion.span variants={item}>Experience</motion.span>
-                </Link>
-                <Link
-                  className="pb-2 last:pb-0 transition-all hover:text-primary-red"
-                  href="#projects"
-                >
-                  <motion.span variants={item}>Projects</motion.span>
-                </Link>
-                <Link
-                  className="pb-2 last:pb-0 transition-all hover:text-primary-red"
-                  href="#contact"
-                >
-                  <motion.span variants={item}>Get In Touch</motion.span>
-                </Link>
-                <Link className="pb-2 last:pb-0 group" href="/">
-                  <motion.span variants={item}>Light Mode</motion.span>
-                </Link>
-              </motion.div>
-            )}
-          </motion.div>
-        </nav>
-      </motion.header>
-    );
+                <motion.span variants={item}>About</motion.span>
+              </Link>
+              <Link
+                className="pb-2 last:pb-0 transition-all hover:text-primary-red"
+                href="#experience-skills"
+              >
+                <motion.span variants={item}>Experience</motion.span>
+              </Link>
+              <Link
+                className="pb-2 last:pb-0 transition-all hover:text-primary-red"
+                href="#projects"
+              >
+                <motion.span variants={item}>Projects</motion.span>
+              </Link>
+              <Link
+                className="pb-2 last:pb-0 transition-all hover:text-primary-red"
+                href="#contact"
+              >
+                <motion.span variants={item}>Get In Touch</motion.span>
+              </Link>
+              <Link className="pb-2 last:pb-0 group" href="/">
+                <motion.span variants={item}>Light Mode</motion.span>
+              </Link>
+            </motion.div>
+          )}
+        </motion.div>
+      </nav>
+    </motion.header>
+  );
 }
 
 export default Header;

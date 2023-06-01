@@ -38,10 +38,7 @@ function ExperienceSkills({}: Props) {
       transition={{ duration: 0.85 }}
     >
       <div className="flex flex-col">
-        <h3
-          className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12 tracking-wider"
-          style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
-        >
+        <h3 className="heading text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12 tracking-wider">
           Experience
         </h3>
         <motion.div
@@ -55,10 +52,7 @@ function ExperienceSkills({}: Props) {
         </motion.div>
       </div>
       <div className="">
-        <h3
-          className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12 tracking-wider"
-          style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
-        >
+        <h3 className="heading text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12 tracking-wider">
           Skills
         </h3>
         <motion.div

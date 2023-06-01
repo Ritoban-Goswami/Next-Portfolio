@@ -33,13 +33,10 @@ function About({}: Props) {
         <AboutSVG className="max-w-[16rem] mx-auto" />
       </div>
       <div className="flex flex-col lg:w-6/12">
-        <h3
-          className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-10 tracking-wider"
-          style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
-        >
+        <h3 className="heading text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-10 tracking-wider">
           Over the years,
         </h3>
-        <div className="text-sm lg:text-base text-neutral-400">
+        <div className="text-sm lg:text-base text-neutral-950 font-medium dark:font-normal dark:text-neutral-400">
           <p className="mb-3">
             I've been a Web Designer and Front End Web Developer, using various
             technologies to build digital products for different industries. I

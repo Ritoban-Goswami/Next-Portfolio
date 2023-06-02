@@ -135,20 +135,22 @@ function ContactForm({}: Props) {
           {showToast && (
             <motion.div
               id="form-toast"
-              className="fixed top-5 left-1/2 -translate-x-2/4 flex items-center max-w-xs p-4 bg-stone-950 rounded-lg"
               role="alert"
+              className="fixed top-5 inset-x-0 z-[60]"
               initial={{ y: -20 }}
               animate={{ y: 0 }}
               exit={{ y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              {formSent ? (
-                <BsFillCheckCircleFill />
-              ) : (
-                <BsExclamationCircleFill className="text-primary-red" />
-              )}
-              <div className="pl-2 text-xs lg:text-sm font-semibold">
-                {formSent ? successMessage : errorMessage}
+              <div className="mx-auto flex items-center max-w-xs p-4 bg-stone-950 rounded-lg drop-shadow-lg border border-[#161616]">
+                {formSent ? (
+                  <BsFillCheckCircleFill />
+                ) : (
+                  <BsExclamationCircleFill className="text-primary-red" />
+                )}
+                <div className="pl-2 text-xs lg:text-sm font-semibold">
+                  {formSent ? successMessage : errorMessage}
+                </div>
               </div>
             </motion.div>
           )}

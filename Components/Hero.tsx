@@ -106,7 +106,7 @@ function Hero({ pageInfo }: Props) {
         </motion.h3>
       </motion.div>
       <div className="w-5/12">
-        <img
+        <img //change it to Next Image tag
           className="relative z-10 mx-auto max-w-[7.5rem] sm:max-w-[70%] lg:max-w-full xl:max-w-[20rem] 2xl:max-w-md"
           src={imageUrlFor(pageInfo?.heroImage).url()}
           alt="Hero Image"

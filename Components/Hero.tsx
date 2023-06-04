@@ -9,15 +9,17 @@ import CurvedLine3 from "../public/svg/curved-line-3.svg";
 import { Courgette } from "next/font/google";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
+import { PageInfo } from "@/typings";
+import { imageUrlFor } from "@/sanity";
 
 const courgette = Courgette({
   subsets: ["latin"],
   weight: "400",
 });
 
-type Props = {};
+type Props = { pageInfo: PageInfo };
 
-function Hero({}: Props) {
+function Hero({ pageInfo }: Props) {
   const { resolvedTheme } = useTheme();
   // let curvedLineComponent;
 
@@ -88,7 +90,7 @@ function Hero({}: Props) {
           className="font-extrabold mb-1 tracking-wide text-3xl sm:text-5xl lg:text-6xl xl:text-[5rem] 2xl:text-[7rem] lg:mb-4"
           style={{ textShadow: "#AD0000 0.5rem 0px 0px" }}
         >
-          John Doe,
+          {pageInfo?.name},
         </motion.h1>
         <motion.h2
           variants={item}
@@ -100,15 +102,16 @@ function Hero({}: Props) {
           variants={item}
           className={`text-base sm:text-2xl lg:text-4xl xl:text-[2.65rem] 2xl:text-5xl ${courgette.className} tracking-wider animate-flicker`}
         >
-          Front End Web Developer, Designer.
+          {pageInfo?.role}
         </motion.h3>
       </motion.div>
       <div className="w-5/12">
-        <Image
+        <img
           className="relative z-10 mx-auto max-w-[7.5rem] sm:max-w-[70%] lg:max-w-full xl:max-w-[20rem] 2xl:max-w-md"
-          src={heroImage}
+          src={imageUrlFor(pageInfo?.heroImage).url()}
           alt="Hero Image"
-          priority={true}
+          width={500}
+          height={500}
         />
       </div>
       {/* {resolvedTheme == "dark" ? (

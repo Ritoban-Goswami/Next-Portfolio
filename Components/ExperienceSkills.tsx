@@ -3,10 +3,13 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import ExperienceCard from "./ExperienceCard";
 import SkillElement from "./SkillElement";
+import { Experience, Skills } from "@/typings";
 
-type Props = {};
+type Props = { experiences: Experience[]; skills: Skills[] };
 
-function ExperienceSkills({}: Props) {
+function ExperienceSkills(props: Props) {
+  const { experiences, skills } = props;
+
   const container = {
     hidden: { opacity: 1 },
     show: {
@@ -23,12 +26,7 @@ function ExperienceSkills({}: Props) {
     show: { opacity: 1, y: 0 },
   };
 
-  const experiences = [];
-
-  for (let i = 0; i < 2; i++) {
-    const isLastCard = i === 2 - 1;
-    experiences.push(<ExperienceCard key={i} isLastCard={isLastCard} />);
-  }
+  console.log(experiences);
 
   return (
     <motion.div
@@ -48,7 +46,17 @@ function ExperienceSkills({}: Props) {
           viewport={{ once: true }}
           className=""
         >
-          {experiences}
+          {experiences?.map((experience, index) => (
+            <ExperienceCard
+              key={experience._id}
+              isLastCard={index === experiences.length - 1}
+              experienceTitle={experience.jobTitle}
+              experienceDesc={experience.description}
+              experienceStart={experience.dateStarted}
+              experienceEnd={experience.dateEnded}
+              experienceLink={experience.companyLink}
+            />
+          ))}
         </motion.div>
       </div>
       <div className="">
@@ -62,13 +70,9 @@ function ExperienceSkills({}: Props) {
           whileInView="show"
           viewport={{ once: true }}
         >
-          <SkillElement />
-          <SkillElement />
-          <SkillElement />
-          <SkillElement />
-          <SkillElement />
-          <SkillElement />
-          <SkillElement />
+          {skills?.map((skill, index) => (
+            <SkillElement key={skill._id} skillName={skill.skillName} />
+          ))}
         </motion.div>
       </div>
     </motion.div>

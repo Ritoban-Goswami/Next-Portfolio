@@ -22,6 +22,7 @@ export interface PageInfo extends SanityBody {
   projects: Project[];
   skills: Skills[];
   socialLinks: Links[];
+  about: Array;
 }
 
 export interface Skills extends SanityBody {
@@ -35,6 +36,7 @@ export interface Experience extends SanityBody {
   dateStarted: date;
   dateEnded: date;
   jobTitle: string;
+  companyLink: string;
 }
 
 export interface Project extends SanityBody {

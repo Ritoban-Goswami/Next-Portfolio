@@ -2,10 +2,37 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import AboutSVG from "@/public/svg/aboutSVG";
+import { PageInfo } from "@/typings";
+import { PortableText } from "@portabletext/react";
+import { PortableTextComponents } from "@portabletext/react";
 
-type Props = {};
+type Props = {
+  about: PageInfo;
+};
 
-function About({}: Props) {
+const ptComponents: PortableTextComponents = {
+  marks: {
+    link: ({ value, children }) => {
+      const target = (value?.href || "").startsWith("http")
+        ? "_blank"
+        : undefined;
+      return (
+        <Link
+          href={value?.href}
+          target={target}
+          className="text-primary-red tracking-widest"
+        >
+          {children}
+        </Link>
+      );
+    },
+  },
+  block: {
+    normal: ({ children }) => <p className="mb-3 last:mb-0">{children}</p>,
+  },
+};
+
+function About({ about }: Props) {
   const container = {
     hidden: { opacity: 1 },
     show: {
@@ -37,40 +64,7 @@ function About({}: Props) {
           Over the years,
         </h3>
         <div className="text-sm lg:text-base text-neutral-950 font-medium dark:font-normal dark:text-neutral-400">
-          <p className="mb-3">
-            I've been a Web Designer and Front End Web Developer, using various
-            technologies to build digital products for different industries. I
-            believe that the work I aspire to do defines me more than what I
-            have already accomplished. I'm driven by a love for learning,
-            problem-solving, and pushing myself outside of my comfort zone.
-            Alongside my professional pursuits, I enjoy playing musical
-            instruments, traveling, learning new languages, and exploring life.
-          </p>
-          <p className="mb-3">
-            In my journey, I've developed a strong commitment to delivering
-            exceptional results for clients. Collaboration and effective
-            communication are crucial in understanding their unique needs. By
-            fostering strong client-designer relationships, I create tailor-made
-            solutions that surpass expectations. I take pride in attention to
-            detail and strive for pixel-perfect designs that combine aesthetics
-            with functionality. With a solid foundation in web technologies, I
-            stay up-to-date with the latest trends, ensuring my work remains
-            innovative.
-          </p>
-          I’d love to hear from you, feel free to{" "}
-          <Link className="text-primary-red tracking-widest" href={"#contact"}>
-            contact me.
-          </Link>
-          You can check out my{" "}
-          <Link
-            className="text-primary-red tracking-widest"
-            href={
-              "https://docs.google.com/document/d/184pnJeKjjObl9KucRJJB4QlqMAAXqfjk/edit?usp=sharing&ouid=110347533012246211464&rtpof=true&sd=true"
-            }
-            target="_blank"
-          >
-            Resume here.
-          </Link>
+          <PortableText value={about.about} components={ptComponents} />
         </div>
       </div>
     </motion.div>

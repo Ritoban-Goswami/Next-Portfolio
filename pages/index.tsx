@@ -41,14 +41,14 @@ export default function Home({
         className="my-16 md:my-28 lg:m-0 lg:h-screen flex items-center justify-center snap-center"
         // className="container mx-auto px-20 h-screen flex items-center snap-center"
       >
-        <About />
+        <About about={pageInfo} />
       </section>
       <section
         id="experience-skills"
         className="my-16 md:my-28 lg:m-0 lg:h-screen flex items-center justify-center snap-center"
         // className="container mx-auto px-20 h-screen flex items-center snap-center"
       >
-        <ExperienceSkills />
+        <ExperienceSkills experiences={experiences} skills={skills} />
       </section>
       <section
         id="projects"
@@ -84,6 +84,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       projects,
       links,
     },
-    revalidate: 10,
+    revalidate: 10, //TO DO: change it to a large amount of time
   };
 };

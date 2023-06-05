@@ -20,6 +20,7 @@ const courgette = Courgette({
 type Props = { pageInfo: PageInfo };
 
 function Hero({ pageInfo }: Props) {
+  const heroImg = imageUrlFor(pageInfo?.heroImage).url();
   const { resolvedTheme } = useTheme();
   // let curvedLineComponent;
 
@@ -106,9 +107,9 @@ function Hero({ pageInfo }: Props) {
         </motion.h3>
       </motion.div>
       <div className="w-5/12">
-        <img //change it to Next Image tag
+        <Image
           className="relative z-10 mx-auto max-w-[7.5rem] sm:max-w-[70%] lg:max-w-full xl:max-w-[20rem] 2xl:max-w-md"
-          src={imageUrlFor(pageInfo?.heroImage).url()}
+          src={heroImg}
           alt="Hero Image"
           width={500}
           height={500}

@@ -13,20 +13,27 @@ import { groq } from "next-sanity";
 import { imageUrlFor } from "@/sanity";
 import ProjectElement from "@/Components/ProjectElement";
 
-type Props = { project: Project };
+type Props = {
+  project: {
+    projectTitle: string;
+    projectDescription: string;
+    projectImage: {};
+    linkToBuild: string;
+    linkToSource: string;
+    usedTechnologies: [];
+  };
+};
 
 export default function Page({ project }: Props) {
-  const router = useRouter();
   const {
-    projectTitle,
-    projectDescription,
+    projectTitle = "Project Name",
+    projectDescription = "Project Description",
     projectImage,
     linkToBuild,
     linkToSource,
+    usedTechnologies,
   } = project;
   const projectImgUrl = imageUrlFor(projectImage).url();
-  // console.log(router.query.slug);
-  console.log(project);
 
   return (
     <>
@@ -55,10 +62,9 @@ export default function Page({ project }: Props) {
                   I've Used
                 </h4>
                 <motion.div className="flex flex-wrap gap-3 items-start md:flex-col">
-                  <SkillElement skillName="Test" />
-                  <SkillElement skillName="Test" />
-                  <SkillElement skillName="Test" />
-                  <SkillElement skillName="Test" />
+                  {usedTechnologies?.map((technology) => (
+                    <SkillElement skillName={technology} />
+                  ))}
                 </motion.div>
               </div>
             </div>
@@ -83,7 +89,14 @@ export default function Page({ project }: Props) {
   );
 }
 
-const query = groq`*[_type == "projects" && projectSlug.current == $slug][0]`;
+const query = groq`*[_type == "projects" && projectSlug.current == $slug][0]{
+  projectTitle,
+  projectDescription,
+    projectImage,
+    linkToBuild,
+    linkToSource,
+  "usedTechnologies": usedTechnologies[]->skillName,
+}`;
 
 export async function getStaticPaths() {
   const paths = await client.fetch(

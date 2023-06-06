@@ -13,6 +13,11 @@ interface Image {
   };
 }
 
+interface Slug {
+  _type: "slug";
+  current: string;
+}
+
 export interface PageInfo extends SanityBody {
   _type: "pageInfo";
   name: string;
@@ -41,6 +46,7 @@ export interface Experience extends SanityBody {
 
 export interface Project extends SanityBody {
   projectTitle: string;
+  projectSlug: Slug;
   linkToSource: string;
   linkToBuild: string;
   projectDescription: string;

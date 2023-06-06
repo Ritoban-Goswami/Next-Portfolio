@@ -26,8 +26,6 @@ function ExperienceSkills(props: Props) {
     show: { opacity: 1, y: 0 },
   };
 
-  console.log(experiences);
-
   return (
     <motion.div
       className="flex justify-between flex-col gap-y-12 md:gap-y-16 lg:flex-row lg:gap-x-8"

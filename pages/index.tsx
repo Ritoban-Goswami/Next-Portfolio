@@ -55,7 +55,7 @@ export default function Home({
         className="my-16 md:my-28 lg:m-0 lg:h-screen flex items-center justify-center snap-center"
         // className="container mx-auto px-20 h-screen flex items-center snap-center"
       >
-        <Projects />
+        <Projects projects={projects} />
       </section>
       <section
         id="contact"

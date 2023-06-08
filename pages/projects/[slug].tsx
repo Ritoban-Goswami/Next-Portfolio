@@ -51,6 +51,7 @@ export default function Page({ project }: Props) {
             alt="freewheelin-bob-dylan"
             width={3000}
             height={3000}
+            priority={true}
           />
           <div className="flex justify-between flex-col-reverse gap-y-8 md:flex-row mt-8 md:mt-16">
             <p className="md:w-8/12 text-sm sm:text-base text-neutral-400">
@@ -63,7 +64,10 @@ export default function Page({ project }: Props) {
                 </h4>
                 <motion.div className="flex flex-wrap gap-3 items-start md:flex-col">
                   {usedTechnologies?.map((technology) => (
-                    <SkillElement skillName={technology} />
+                    <SkillElement
+                      key={technology._id}
+                      skillName={technology.skillName}
+                    />
                   ))}
                 </motion.div>
               </div>
@@ -95,7 +99,10 @@ const query = groq`*[_type == "projects" && projectSlug.current == $slug][0]{
     projectImage,
     linkToBuild,
     linkToSource,
-  "usedTechnologies": usedTechnologies[]->skillName,
+    usedTechnologies[]->{
+      skillName,
+      _id
+    }
 }`;
 
 export async function getStaticPaths() {

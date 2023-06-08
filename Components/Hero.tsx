@@ -113,6 +113,7 @@ function Hero({ pageInfo }: Props) {
           alt="Hero Image"
           width={500}
           height={500}
+          priority={true}
         />
       </div>
       {/* {resolvedTheme == "dark" ? (

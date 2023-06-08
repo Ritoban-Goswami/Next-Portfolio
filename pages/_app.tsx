@@ -21,8 +21,8 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <ThemeProvider attribute="class">
-        <Layout>
-          <Component {...pageProps} />
+        <Layout pageProps={...pageProps}>
+          <Component className={`${inter.className}`} {...pageProps} />
         </Layout>
       </ThemeProvider>
     </>

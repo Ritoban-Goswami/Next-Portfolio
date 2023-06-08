@@ -53,6 +53,7 @@ function Header({}: Props) {
             src={HeaderLogo}
             alt="Header Logo"
             className="max-w-[3rem] md:max-w-[4rem] lg:max-w-[5rem]"
+            priority={true}
           ></Image>
         </Link>
         <div className="hidden text-lg items-center justify-evenly px-2 font-semibold rounded-3xl backdrop-blur-xl md:flex md:w-3/5 xl:w-2/5">

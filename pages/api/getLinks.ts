@@ -4,7 +4,7 @@ import { groq } from "next-sanity";
 import { client } from "@/sanity";
 import { Links } from "@/typings";
 
-const query = groq`*[_type=="links"]`;
+const query = groq`*[_type=="links"] | order(_createdAt desc)`;
 
 type Data = {
   links: Links[];

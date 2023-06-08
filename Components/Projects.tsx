@@ -41,6 +41,7 @@ function Projects({ projects }: Props) {
       >
         {projects?.map((project) => (
           <ProjectElement
+            key={project._id}
             projectTitle={project.projectTitle}
             projectDesc={project.projectDescription}
             projectImg={project.projectImage}

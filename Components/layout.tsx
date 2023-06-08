@@ -1,24 +1,21 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import { Inter } from "next/font/google";
+import { AppProps } from "next/app";
 
-type Props = { children: React.ReactNode };
+type Props = { children: React.ReactNode; pageProps: AppProps };
 
-const inter = Inter({
-  subsets: ["latin"],
-});
-
-export default function Layout({ children }: Props) {
+export default function Layout({ children, pageProps }: Props) {
+  const { links } = pageProps;
   return (
     <>
       <Header />
       <main
         // className={`${inter.className} overflow-y-scroll max-h-screen snap-y snap-mandatory`}
-        className={`${inter.className} container mx-auto px-5 sm:px-10 lg:px-20 snap-y snap-mandatory`}
+        className="container mx-auto px-5 sm:px-10 lg:px-20 snap-y snap-mandatory"
       >
         {children}
       </main>
-      <Footer />
+      <Footer links={links} />
     </>
   );
 }

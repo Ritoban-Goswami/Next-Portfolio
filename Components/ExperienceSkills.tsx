@@ -28,12 +28,13 @@ function ExperienceSkills(props: Props) {
 
   return (
     <motion.div
-      className="flex justify-between flex-col gap-y-12 md:gap-y-16 lg:flex-row lg:gap-x-8"
+      className="flex justify-between flex-col gap-y-12 md:gap-y-16 lg:flex-row"
+      // lg:gap-x-12
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.85 }}
     >
-      <div className="flex flex-col">
+      <div className="flex flex-col lg:w-5/12">
         <h3 className="heading text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12 tracking-wider">
           Experience
         </h3>
@@ -57,12 +58,12 @@ function ExperienceSkills(props: Props) {
           ))}
         </motion.div>
       </div>
-      <div className="">
+      <div className="lg:w-6/12">
         <h3 className="heading text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12 tracking-wider">
           Skills
         </h3>
         <motion.div
-          className="flex flex-wrap gap-4"
+          className="flex flex-wrap gap-6"
           variants={container}
           initial="hidden"
           whileInView="show"

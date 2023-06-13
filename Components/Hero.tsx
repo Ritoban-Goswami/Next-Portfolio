@@ -108,7 +108,7 @@ function Hero({ pageInfo }: Props) {
       </motion.div>
       <div className="w-5/12">
         <Image
-          className="relative z-10 mx-auto max-w-[7.5rem] sm:max-w-[70%] lg:max-w-full xl:max-w-[20rem] 2xl:max-w-md"
+          className="relative z-10 ml-auto max-w-[7.5rem] sm:max-w-[70%] lg:max-w-full xl:max-w-[20rem] 2xl:max-w-md"
           src={heroImg}
           alt="Hero Image"
           width={500}

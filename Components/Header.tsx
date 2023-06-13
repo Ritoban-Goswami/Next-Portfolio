@@ -47,16 +47,16 @@ function Header({}: Props) {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.45 }}
     >
-      <nav className="container flex justify-between px-3 mt-4 md:mt-6 lg:mt-8 mx-auto">
+      <nav className="container flex justify-between px-3 xl:px-11 mt-4 md:mt-6 lg:mt-4 mx-auto">
         <Link className="inline-block" href="/">
           <Image
             src={HeaderLogo}
             alt="Header Logo"
-            className="max-w-[3rem] md:max-w-[4rem] lg:max-w-[5rem]"
+            className="max-w-[3rem] md:max-w-[4rem] lg:max-w-[4rem]"
             priority={true}
           ></Image>
         </Link>
-        <div className="hidden text-lg items-center justify-evenly px-2 font-semibold rounded-3xl backdrop-blur-xl md:flex md:w-3/5 xl:w-2/5">
+        <div className="hidden text-sm items-center justify-evenly 2xl:px-2 font-semibold rounded-3xl backdrop-blur-xl md:flex md:w-3/5 xl:w-[35%]">
           <Link
             href="#about"
             className="pl-2 first:pl-0 transition-all hover:text-primary-red"

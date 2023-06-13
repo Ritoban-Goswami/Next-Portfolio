@@ -63,7 +63,7 @@ function ExperienceSkills(props: Props) {
           Skills
         </h3>
         <motion.div
-          className="flex flex-wrap gap-6"
+          className="flex flex-wrap gap-4 xl:gap-6"
           variants={container}
           initial="hidden"
           whileInView="show"

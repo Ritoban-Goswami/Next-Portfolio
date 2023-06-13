@@ -56,7 +56,7 @@ function Header({}: Props) {
             priority={true}
           ></Image>
         </Link>
-        <div className="hidden text-sm items-center justify-evenly 2xl:px-2 font-semibold rounded-3xl backdrop-blur-xl md:flex md:w-3/5 xl:w-[35%]">
+        <div className="hidden text-xs xl:text-sm items-center justify-evenly 2xl:px-2 font-semibold rounded-3xl backdrop-blur-xl md:flex w-[45%] xl:w-[35%]">
           <Link
             href="#about"
             className="pl-2 first:pl-0 transition-all hover:text-primary-red"

@@ -1,17 +1,14 @@
-import { useRouter } from "next/router";
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import projectImgBob from "../../public/project assets/1. Bob.png";
 import Link from "next/link";
 import SkillElement from "@/Components/SkillElement";
 import { Project } from "@/typings";
-// import { fetchProjects } from "@/utils/fetchProjects";
 import { GetStaticProps } from "next";
 import { client } from "@/sanity";
 import { groq } from "next-sanity";
 import { imageUrlFor } from "@/sanity";
-import ProjectElement from "@/Components/ProjectElement";
+import { ParsedUrlQuery } from "querystring";
 
 type Props = {
   project: {
@@ -63,11 +60,8 @@ export default function Page({ project }: Props) {
                   I've Used
                 </h4>
                 <motion.div className="flex flex-wrap gap-3 items-start md:flex-col">
-                  {usedTechnologies?.map((technology) => (
-                    <SkillElement
-                      key={technology._id}
-                      skillName={technology.skillName}
-                    />
+                  {usedTechnologies?.map((skill: any) => (
+                    <SkillElement key={skill._id} skillName={skill.skillName} />
                   ))}
                 </motion.div>
               </div>
@@ -111,13 +105,13 @@ export async function getStaticPaths() {
   );
 
   return {
-    paths: paths.map((slug) => ({ params: { slug } })),
+    paths: paths.map((slug: string) => ({ params: { slug } })),
     fallback: true,
   };
 }
 
-export const getStaticProps = async (context) => {
-  const { slug = "" } = context.params;
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { slug = "" } = context.params as ParsedUrlQuery;
   const project: Project = await client.fetch(query, { slug });
 
   return {

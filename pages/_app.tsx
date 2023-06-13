@@ -5,9 +5,7 @@ import { Inter } from "next/font/google";
 import Layout from "@/Components/layout";
 import { ThemeProvider } from "next-themes";
 
-const inter = Inter({
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"], fallback: ["system-ui"] });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -21,9 +19,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <ThemeProvider attribute="class">
-        <Layout pageProps={...pageProps}>
-          <Component className={`${inter.className}`} {...pageProps} />
-        </Layout>
+        <div className={inter.className}>
+          <Layout pageProps={...pageProps}>
+            <Component {...pageProps} />
+          </Layout>
+        </div>
       </ThemeProvider>
     </>
   );

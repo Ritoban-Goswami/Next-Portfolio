@@ -84,6 +84,5 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       projects,
       links,
     },
-    revalidate: 10, //TO DO: change it to a large amount of time
   };
 };

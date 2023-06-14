@@ -58,26 +58,26 @@ function Header({}: Props) {
         </Link>
         <div className="hidden text-xs xl:text-sm items-center justify-evenly 2xl:px-2 font-semibold rounded-3xl backdrop-blur-xl md:flex w-[45%] xl:w-[35%]">
           <Link
-            href="#about"
+            href="/#about"
             className="pl-2 first:pl-0 transition-all hover:text-primary-red"
           >
             About
           </Link>
           <Link
             className="pl-2 first:pl-0 transition-all hover:text-primary-red"
-            href="#experience-skills"
+            href="/#experience-skills"
           >
             Experience
           </Link>
           <Link
             className="pl-2 first:pl-0 transition-all hover:text-primary-red"
-            href="#projects"
+            href="/#projects"
           >
             Projects
           </Link>
           <Link
             className="pl-2 first:pl-0 transition-all hover:text-primary-red"
-            href="#contact"
+            href="/#contact"
           >
             Get In Touch
           </Link>

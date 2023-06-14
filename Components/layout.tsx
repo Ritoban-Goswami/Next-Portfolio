@@ -2,7 +2,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { AppProps } from "next/app";
 
-type Props = { children: React.ReactNode; pageProps: AppProps };
+type Props = { children: React.ReactNode; pageProps: any };
 
 export default function Layout({ children, pageProps }: Props) {
   const { links } = pageProps;

@@ -5,7 +5,7 @@ export const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
   apiVersion: "2023-06-04", // TODO: make it dynamic today date
-  useCdn: false,
+  useCdn: true,
 });
 
 const imageBuilder = imageUrlBuilder(client);

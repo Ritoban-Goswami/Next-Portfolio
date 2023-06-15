@@ -3,7 +3,7 @@ import About from "@/Components/About";
 import ExperienceSkills from "@/Components/ExperienceSkills";
 import Projects from "@/Components/Projects";
 import ContactForm from "@/Components/ContactForm";
-import { GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import { Experience, PageInfo, Project, Skills, Links } from "@/typings";
 import { fetchExperiences } from "@/utils/fetchExperiences";
 import { fetchPageInfo } from "@/utils/fetchPageInfo";
@@ -69,7 +69,7 @@ export default function Home({
   );
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skills[] = await fetchSkills();

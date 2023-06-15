@@ -11,26 +11,23 @@ import { imageUrlFor } from "@/sanity";
 import { ParsedUrlQuery } from "querystring";
 
 type Props = {
-  project: {
-    projectTitle: string;
-    projectDescription: string;
-    projectImage: {};
-    linkToBuild: string;
-    linkToSource: string;
-    usedTechnologies: [];
-  };
+  projectTitle: string;
+  projectDescription: string;
+  projectImage: string;
+  linkToBuild: string;
+  linkToSource: string;
+  usedTechnologies: [];
 };
 
-export default function Page({ project }: Props) {
-  const {
-    projectTitle = "Project Name",
-    projectDescription = "Project Description",
-    projectImage,
-    linkToBuild,
-    linkToSource,
-    usedTechnologies,
-  } = project;
-  const projectImgUrl = imageUrlFor(projectImage).url();
+export default function Page({
+  projectTitle,
+  projectDescription,
+  projectImage,
+  linkToBuild,
+  linkToSource,
+  usedTechnologies,
+}: Props) {
+  // console.log(project);
 
   return (
     <>
@@ -44,7 +41,7 @@ export default function Page({ project }: Props) {
           </h1>
           <Image
             className="rounded-md 2xl:max-w-[70rem]"
-            src={projectImgUrl}
+            src={projectImage}
             alt="freewheelin-bob-dylan"
             width={3000}
             height={3000}
@@ -113,10 +110,22 @@ export async function getStaticPaths() {
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug = "" } = context.params as ParsedUrlQuery;
   const project: Project = await client.fetch(query, { slug });
+  const projectImgUrl = imageUrlFor(project.projectImage).url();
 
   return {
     props: {
-      project,
+      ...project,
+      projectImage: projectImgUrl,
     },
   };
 };
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+//   const { slug = "" } = context.params as ParsedUrlQuery;
+//   const project: Project = await client.fetch(query, { slug });
+
+//   return {
+//     props: {
+//       project,
+//     },
+//   };
+// };

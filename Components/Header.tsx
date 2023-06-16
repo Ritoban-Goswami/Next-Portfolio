@@ -81,7 +81,7 @@ function Header({}: Props) {
           >
             Get In Touch
           </Link>
-          <span
+          {/* <span
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className="cursor-pointer pl-4 first:pl-0 group"
           >
@@ -90,7 +90,7 @@ function Header({}: Props) {
             ) : (
               <LightModeIcon className="text-2xl transition-all group-hover:text-amber-400" />
             )}
-          </span>
+          </span> */}
         </div>
         <motion.div
           className="relative md:hidden flex items-center cursor-pointer"
@@ -133,9 +133,9 @@ function Header({}: Props) {
               >
                 <motion.span variants={item}>Get In Touch</motion.span>
               </Link>
-              <Link className="pb-2 last:pb-0 group" href="/">
+              {/* <Link className="pb-2 last:pb-0 group" href="/">
                 <motion.span variants={item}>Light Mode</motion.span>
-              </Link>
+              </Link> */}
             </motion.div>
           )}
         </motion.div>

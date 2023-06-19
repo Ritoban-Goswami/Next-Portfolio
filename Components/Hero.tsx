@@ -8,7 +8,6 @@ import CurvedLine2Light from "../public/svg/curved-line-2-light";
 import CurvedLine3 from "../public/svg/curved-line-3.svg";
 import { Courgette } from "next/font/google";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
 import { PageInfo } from "@/typings";
 import { imageUrlFor } from "@/sanity";
 
@@ -21,8 +20,6 @@ type Props = { pageInfo: PageInfo };
 
 function Hero({ pageInfo }: Props) {
   const heroImg = imageUrlFor(pageInfo?.heroImage).url();
-  const { resolvedTheme } = useTheme();
-  // let curvedLineComponent;
 
   const container = {
     hidden: { opacity: 1 },
@@ -40,24 +37,6 @@ function Hero({ pageInfo }: Props) {
     show: { opacity: 1, y: 0 },
   };
 
-  // switch (resolvedTheme) {
-  //   case "light":
-  //     curvedLineComponent = (
-  //       <CurvedLine1Light className="absolute z-[5] left-[-23%] bottom-32 w-3/6 lg:bottom-[20rem] xl:bottom-[18rem] lg:w-[55%] xl:w-[47%]" />
-  //     );
-  //     break;
-  //   case "dark":
-  //     curvedLineComponent = (
-  //       <CurvedLine1Light className="absolute z-[5] left-[-23%] bottom-32 w-3/6 lg:bottom-[20rem] xl:bottom-[18rem] lg:w-[55%] xl:w-[47%]" />
-  //     );
-  //     break;
-  //   default:
-  //     curvedLineComponent = (
-  //       <CurvedLine1Light className="absolute z-[5] left-[-23%] bottom-32 w-3/6 lg:bottom-[20rem] xl:bottom-[18rem] lg:w-[55%] xl:w-[47%]" />
-  //     );
-  //     break;
-  // }
-
   return (
     <motion.div
       className="w-full relative flex sm:flex-row justify-between items-center"
@@ -66,7 +45,6 @@ function Hero({ pageInfo }: Props) {
       transition={{ duration: 0.85 }}
     >
       <CurvedLine1Light className="absolute z-[5] left-[-23%] bottom-32 w-3/6 lg:bottom-[20rem] xl:bottom-[18rem] lg:w-[55%] xl:w-[47%]" />
-      {/* {curvedLineComponent} */}
 
       {/* <div className="absolute w-28 h-28 bg-red-600 top-[17%] left-[-4%] rounded-full opacity-80 blur-2xl animate-blob"></div> */}
       {/* <Image
@@ -116,11 +94,7 @@ function Hero({ pageInfo }: Props) {
           priority={true}
         />
       </div>
-      {/* {resolvedTheme == "dark" ? (
-        <CurvedLine2 className="absolute top-[9rem] left-[70%]" />
-      ) : (
-        <CurvedLine2Light className="absolute top-[9rem] left-[70%]" />
-      )} */}
+      {/* <CurvedLine2 className="absolute top-[9rem] left-[70%]" /> */}
     </motion.div>
   );
 }

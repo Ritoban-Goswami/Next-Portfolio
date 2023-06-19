@@ -7,13 +7,11 @@ import LightModeIcon from "../public/svg/light-mode";
 import { motion, useCycle } from "framer-motion";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
-import { useTheme } from "next-themes";
 
 type Props = {};
 
 function Header({}: Props) {
   const [isNavMenuOpen, toggleIsNavMenuOpen] = useCycle(false, true);
-  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

@@ -21,7 +21,6 @@
     "framer-motion": "^10.12.4",
     "next": "13.3.0",
     "next-sanity": "^4.3.3",
-    "next-themes": "^0.2.1",
     "postcss": "8.4.22",
     "react": "18.2.0",
     "react-dom": "18.2.0",

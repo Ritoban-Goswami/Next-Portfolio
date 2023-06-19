@@ -7,12 +7,12 @@
     @apply scroll-smooth;
   }
 
-  html h3.heading {
-    text-shadow: #2b2b2b 0.4rem 0px 0px;
+  h3.heading {
+    text-shadow: #2b2b2b calc(clamp(0.3vw, 0.85vmin, 0.85vw)) 0px 0px;
   }
-  html:not(.dark) h3.heading {
+  /* html:not(.dark) h3.heading {
     text-shadow: #b3b3b3 0.3rem 0px 0px;
-  }
+  } */
 
   body {
     @apply dark:bg-gray-800 bg-white;

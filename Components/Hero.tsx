@@ -67,7 +67,9 @@ function Hero({ pageInfo }: Props) {
         <motion.h1
           variants={item}
           className="font-extrabold mb-1 tracking-wide text-3xl sm:text-5xl lg:text-6xl xl:text-[5rem] 2xl:text-[7rem] lg:mb-4"
-          style={{ textShadow: "#AD0000 0.5rem 0px 0px" }}
+          style={{
+            textShadow: "#AD0000 calc(clamp(0.4vw, 0.7vmin, 0.7vw)) 0px 0px",
+          }}
         >
           {pageInfo?.name},
         </motion.h1>

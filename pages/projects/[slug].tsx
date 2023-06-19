@@ -37,8 +37,8 @@ export default function Page({
       <section className="mb-4">
         <div className="flex flex-col">
           <h1
-            className="text-2xl sm:text-3xl lg:text-4xl xl:text-[2.5rem] 2xl:text-6xl w-4/5 md:w-full font-semibold mb-12 xl:mb-20 mt-20 md:mt-40"
-            style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
+            className="heading text-2xl sm:text-3xl lg:text-4xl xl:text-[2.5rem] 2xl:text-6xl w-4/5 md:w-full font-semibold mb-12 xl:mb-20 mt-20 md:mt-40"
+            // style={{ textShadow: "#2B2B2B 0.4rem 0px 0px" }}
           >
             {/* <button type="button" onClick={() => router.back()}>
               <BiArrowBack />

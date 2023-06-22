@@ -4,7 +4,35 @@ import { groq } from "next-sanity";
 import { client } from "@/sanity";
 import { PageInfo } from "@/typings";
 
-const query = groq`*[_type=="pageInfo"][0]`;
+const query = groq`*[_type=="pageInfo"][0]{
+  name,
+  role,
+  heroImage,
+  about,
+  experiences[]->{
+    _id,
+    jobTitle,
+    description,
+    dateStarted,
+    companyLink
+  },
+    projects[]->{
+    _id,
+      projectImage,
+      projectSlug,
+      projectTitle,
+      projectDescription
+    },
+    socialLinks[]->{
+    _id,
+      linkTitle,
+      linkUrl
+    },
+  skills[]->{
+      skillName,
+      _id
+    }
+}`;
 
 type Data = {
   pageInfo: PageInfo;

@@ -10,6 +10,7 @@ function ContactForm({}: Props) {
   const {
     register,
     handleSubmit,
+    reset,
     formState: {},
   } = useForm();
   const [successMessage, setSuccessMessage] = useState("");
@@ -27,6 +28,12 @@ function ContactForm({}: Props) {
       return () => clearTimeout(timer);
     }
   }, [showToast]);
+
+  useEffect(() => {
+    if (!isSubmitting) {
+      reset();
+    }
+  }, [isSubmitting, reset]);
 
   function onSubmit(data: any) {
     setSuccessMessage("");

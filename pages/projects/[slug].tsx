@@ -102,16 +102,16 @@ const query = groq`*[_type == "projects" && projectSlug.current == $slug][0]{
     }
 }`;
 
-export async function getStaticPaths() {
-  const paths = await client.fetch(
-    groq`*[_type == "projects" && defined(projectSlug.current)][].projectSlug.current`
-  );
+// export async function getStaticPaths() {
+//   const paths = await client.fetch(
+//     groq`*[_type == "projects" && defined(projectSlug.current)][].projectSlug.current`
+//   );
 
-  return {
-    paths: paths.map((slug: string) => ({ params: { slug } })),
-    fallback: true,
-  };
-}
+//   return {
+//     paths: paths.map((slug: string) => ({ params: { slug } })),
+//     fallback: true,
+//   };
+// }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { slug = "" } = context.params as ParsedUrlQuery;

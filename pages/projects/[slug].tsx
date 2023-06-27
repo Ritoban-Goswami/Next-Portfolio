@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SkillElement from "@/Components/SkillElement";
 import { Project } from "@/typings";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import { client } from "@/sanity";
 import { groq } from "next-sanity";
 import { imageUrlFor } from "@/sanity";
@@ -113,7 +113,7 @@ export async function getStaticPaths() {
   };
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const { slug = "" } = context.params as ParsedUrlQuery;
   const project: Project = await client.fetch(query, { slug });
   const projectImgUrl = imageUrlFor(project.projectImage).url();
@@ -125,13 +125,3 @@ export const getStaticProps: GetStaticProps = async (context) => {
     },
   };
 };
-// export const getServerSideProps: GetServerSideProps = async (context) => {
-//   const { slug = "" } = context.params as ParsedUrlQuery;
-//   const project: Project = await client.fetch(query, { slug });
-
-//   return {
-//     props: {
-//       project,
-//     },
-//   };
-// };

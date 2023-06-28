@@ -49,7 +49,8 @@ export interface Project extends SanityBody {
   projectSlug: Slug;
   linkToSource: string;
   linkToBuild: string;
-  projectDescription: string;
+  projectShortDescription: string;
+  projectDescription: Array;
   _type: "projects";
   projectImage: Image;
   usedTechnologies: Skills[];

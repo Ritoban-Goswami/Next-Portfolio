@@ -21,6 +21,7 @@ const query = groq`*[_type=="pageInfo"][0]{
       projectImage,
       projectSlug,
       projectTitle,
+      projectShortDescription,
       projectDescription
     },
     socialLinks[]->{

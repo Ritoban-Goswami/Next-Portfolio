@@ -44,6 +44,7 @@ function Projects({ projects }: Props) {
             key={project._id}
             projectTitle={project.projectTitle}
             projectDesc={project.projectDescription}
+            projectShortDesc={project.projectShortDescription}
             projectImg={project.projectImage}
             projectSlug={project.projectSlug.current}
           />

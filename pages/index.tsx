@@ -13,19 +13,9 @@ import { fetchLinks } from "@/utils/fetchLinks";
 
 type Props = {
   pageInfo: PageInfo;
-  experiences: Experience[];
-  projects: Project[];
-  skills: Skills[];
-  links: Links[];
 };
 
-export default function Home({
-  pageInfo,
-  experiences,
-  projects,
-  skills,
-  links,
-}: Props) {
+export default function Home({ pageInfo }: Props) {
   return (
     <>
       <section
@@ -74,18 +64,10 @@ export default function Home({
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
-  const experiences: Experience[] = await fetchExperiences();
-  const skills: Skills[] = await fetchSkills();
-  const projects: Project[] = await fetchProjects();
-  const links: Links[] = await fetchLinks();
 
   return {
     props: {
       pageInfo,
-      experiences,
-      skills,
-      projects,
-      links,
     },
   };
 };

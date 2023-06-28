@@ -9,16 +9,39 @@ import { client } from "@/sanity";
 import { groq } from "next-sanity";
 import { imageUrlFor } from "@/sanity";
 import { ParsedUrlQuery } from "querystring";
+import { PortableText, PortableTextComponents } from "@portabletext/react";
 // import { useRouter } from "next/router";
 // import { BiArrowBack } from "react-icons/bi";
 
 type Props = {
   projectTitle: string;
-  projectDescription: string;
+  projectDescription: [];
   projectImage: string;
   linkToBuild: string;
   linkToSource: string;
   usedTechnologies: [];
+};
+
+const ptComponents: PortableTextComponents = {
+  marks: {
+    link: ({ value, children }) => {
+      const target = (value?.href || "").startsWith("http")
+        ? "_blank"
+        : undefined;
+      return (
+        <Link
+          href={value?.href}
+          target={target}
+          className="text-primary-red tracking-widest"
+        >
+          {children}
+        </Link>
+      );
+    },
+  },
+  block: {
+    normal: ({ children }) => <p className="mb-3 last:mb-0">{children}</p>,
+  },
 };
 
 export default function Page({
@@ -30,7 +53,7 @@ export default function Page({
   usedTechnologies,
 }: Props) {
   // const router = useRouter();
-  // console.log(project);
+  console.log(projectDescription);
 
   return (
     <>
@@ -55,7 +78,11 @@ export default function Page({
           />
           <div className="flex justify-between flex-col-reverse gap-y-8 md:flex-row mt-8 md:mt-16">
             <p className="md:w-8/12 text-sm sm:text-base text-neutral-400">
-              {projectDescription}
+              {/* {projectDescription} */}
+              <PortableText
+                value={projectDescription}
+                components={ptComponents}
+              />
             </p>
             <div className="md:w-4/12 md:flex flex-col items-center">
               <div>
@@ -74,12 +101,14 @@ export default function Page({
             <Link
               className="text-sm mr-5 flex justify-center items-center bg-transparent hover:bg-primary-red text-primary-red font-semibold hover:text-neutral-100 transition-colors py-2 px-4 border-2 border-primary-red hover:border-transparent rounded-lg"
               href={`${linkToBuild}`}
+              target="_blank"
             >
               View Project
             </Link>
             <Link
               className="text-sm flex justify-center items-center bg-transparent hover:bg-primary-red text-primary-red font-semibold hover:text-neutral-100 transition-colors py-2 px-4 border-2 border-primary-red hover:border-transparent rounded-lg"
               href={`${linkToSource}`}
+              target="_blank"
             >
               Source Code
             </Link>

@@ -6,7 +6,8 @@ import { imageUrlFor } from "@/sanity";
 
 type Props = {
   projectTitle: string;
-  projectDesc: string;
+  projectDesc: [];
+  projectShortDesc: string;
   projectImg: {};
   projectSlug: string;
 };
@@ -14,6 +15,7 @@ type Props = {
 const ProjectElement = ({
   projectTitle,
   projectDesc,
+  projectShortDesc,
   projectImg,
   projectSlug,
 }: Props) => {
@@ -44,8 +46,8 @@ const ProjectElement = ({
           <h4 className="text-xl text-neutral-100 font-bold mb-4">
             {projectTitle}
           </h4>
-          <p className="text-sm font-semibold text-neutral-400">
-            {projectDesc}
+          <p className="text-sm font-semibold text-neutral-400 line-clamp-5 md:line-clamp-3">
+            {projectShortDesc}
           </p>
         </div>
       </motion.div>

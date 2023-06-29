@@ -4,12 +4,8 @@ import ExperienceSkills from "@/Components/ExperienceSkills";
 import Projects from "@/Components/Projects";
 import ContactForm from "@/Components/ContactForm";
 import { GetServerSideProps, GetStaticProps } from "next";
-import { Experience, PageInfo, Project, Skills, Links } from "@/typings";
-import { fetchExperiences } from "@/utils/fetchExperiences";
+import { PageInfo } from "@/typings";
 import { fetchPageInfo } from "@/utils/fetchPageInfo";
-import { fetchProjects } from "@/utils/fetchProjects";
-import { fetchSkills } from "@/utils/fetchSkills";
-import { fetchLinks } from "@/utils/fetchLinks";
 
 type Props = {
   pageInfo: PageInfo;

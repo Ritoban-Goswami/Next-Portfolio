@@ -20,6 +20,7 @@ type Props = {
   linkToBuild: string;
   linkToSource: string;
   usedTechnologies: [];
+  projectInProgress: boolean;
 };
 
 const ptComponents: PortableTextComponents = {
@@ -51,10 +52,8 @@ export default function Page({
   linkToBuild,
   linkToSource,
   usedTechnologies,
+  projectInProgress,
 }: Props) {
-  // const router = useRouter();
-  console.log(projectDescription);
-
   return (
     <>
       <section className="mb-4">
@@ -66,7 +65,7 @@ export default function Page({
             {/* <button type="button" onClick={() => router.back()}>
               <BiArrowBack />
             </button> */}
-            {projectTitle}
+            {projectTitle} {projectInProgress && "(Work In Progress)"}
           </h1>
           <Image
             className="rounded-md 2xl:max-w-[70rem]"
@@ -98,13 +97,15 @@ export default function Page({
             </div>
           </div>
           <div className="my-16 flex justify-center md:justify-start">
-            <Link
-              className="text-sm mr-5 flex justify-center items-center bg-transparent hover:bg-primary-red text-primary-red font-semibold hover:text-neutral-100 transition-colors py-2 px-4 border-2 border-primary-red hover:border-transparent rounded-lg"
-              href={`${linkToBuild}`}
-              target="_blank"
-            >
-              View Project
-            </Link>
+            {!projectInProgress && (
+              <Link
+                className="text-sm mr-5 flex justify-center items-center bg-transparent hover:bg-primary-red text-primary-red font-semibold hover:text-neutral-100 transition-colors py-2 px-4 border-2 border-primary-red hover:border-transparent rounded-lg"
+                href={`${linkToBuild}`}
+                target="_blank"
+              >
+                View Project
+              </Link>
+            )}
             <Link
               className="text-sm flex justify-center items-center bg-transparent hover:bg-primary-red text-primary-red font-semibold hover:text-neutral-100 transition-colors py-2 px-4 border-2 border-primary-red hover:border-transparent rounded-lg"
               href={`${linkToSource}`}
@@ -122,13 +123,14 @@ export default function Page({
 const query = groq`*[_type == "projects" && projectSlug.current == $slug][0]{
   projectTitle,
   projectDescription,
-    projectImage,
-    linkToBuild,
-    linkToSource,
-    usedTechnologies[]->{
-      skillName,
-      _id
-    }
+  projectImage,
+  linkToBuild,
+  linkToSource,
+  usedTechnologies[]->{
+    skillName,
+    _id
+  },
+  projectInProgress,
 }`;
 
 // export async function getStaticPaths() {

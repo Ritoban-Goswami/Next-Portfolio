@@ -54,6 +54,7 @@ export interface Project extends SanityBody {
   _type: "projects";
   projectImage: Image;
   usedTechnologies: Skills[];
+  projectInProgress: boolean;
 }
 
 export interface Links extends SanityBody {

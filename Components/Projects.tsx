@@ -47,6 +47,7 @@ function Projects({ projects }: Props) {
             projectShortDesc={project.projectShortDescription}
             projectImg={project.projectImage}
             projectSlug={project.projectSlug.current}
+            projectInProgress={project.projectInProgress}
           />
         ))}
       </motion.div>

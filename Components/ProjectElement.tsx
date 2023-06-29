@@ -10,14 +10,15 @@ type Props = {
   projectShortDesc: string;
   projectImg: {};
   projectSlug: string;
+  projectInProgress: boolean;
 };
 
 const ProjectElement = ({
   projectTitle,
-  projectDesc,
   projectShortDesc,
   projectImg,
   projectSlug,
+  projectInProgress,
 }: Props) => {
   const projectImgUrl = imageUrlFor(projectImg).url();
   const item = {
@@ -35,10 +36,15 @@ const ProjectElement = ({
         }}
         className="md:relative"
       >
+        {projectInProgress && (
+          <div className="absolute p-1 tracking-widest text-xs font-semibold opacity-90 bg-red-500 rounded-md top-1 left-1 dark:border-gray-900 z-10">
+            WIP
+          </div>
+        )}
         <Image
           className="rounded-md"
           src={projectImgUrl}
-          alt="Bob dylan Project Image"
+          alt="Click to go to the project page"
           width={1000}
           height={1000}
         />

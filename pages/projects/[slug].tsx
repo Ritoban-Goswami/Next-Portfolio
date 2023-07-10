@@ -68,7 +68,7 @@ export default function Page({
             {projectTitle} {projectInProgress && "(Work In Progress)"}
           </h1>
           <Image
-            className="rounded-md 2xl:max-w-[70rem]"
+            className="rounded-md 2xl:max-w-[70rem] outline outline-1 outline-[#141414]"
             src={projectImage}
             alt="freewheelin-bob-dylan"
             width={3000}

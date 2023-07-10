@@ -44,7 +44,7 @@ function Hero({ pageInfo }: Props) {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.85 }}
     >
-      <CurvedLine1Light className="absolute z-[5] left-[-23%] bottom-32 w-3/6 lg:bottom-[20rem] xl:bottom-[18rem] lg:w-[55%] xl:w-[47%]" />
+      <CurvedLine1Light className="absolute z-[5] left-[-23%] bottom-32 w-3/6 md:bottom-40 lg:bottom-[27rem] xl:bottom-[25rem] lg:w-[55%] xl:w-[47%]" />
 
       {/* <div className="absolute w-28 h-28 bg-red-600 top-[17%] left-[-4%] rounded-full opacity-80 blur-2xl animate-blob"></div> */}
       {/* <Image

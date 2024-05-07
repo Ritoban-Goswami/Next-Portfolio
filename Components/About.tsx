@@ -61,7 +61,7 @@ function About({ about }: Props) {
       </div>
       <div className="flex flex-col lg:w-6/12">
         <h3 className="heading text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-10 tracking-wider">
-          Over the years,
+          A little about me,
         </h3>
         <div className="text-sm lg:text-base text-neutral-950 font-medium dark:font-normal dark:text-neutral-400">
           <PortableText value={about.about} components={ptComponents} />

@@ -29,7 +29,7 @@ function Footer({ links }: Props) {
         Copyright © {currentYear}{" "}
         <Link
           className="transition-all hover:text-primary-red"
-          href="https://ritoban-goswami.github.io/Ritoban-Goswami/"
+          href="https://www.linkedin.com/in/ritoban-goswami/"
         >
           Ritoban Goswami
         </Link>

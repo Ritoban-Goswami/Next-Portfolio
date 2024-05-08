@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import { Links } from "@/typings";
+import { fetchLinks } from "@/utils/fetchLinks";
 
-type Props = { links: Links[] };
-
-function Footer({ links }: Props) {
+function Footer() {
+  const [links, setLinks] = useState<Links[]>([]);
   const d = new Date();
   let currentYear = d.getFullYear();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetchLinks();
+        setLinks(response);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <footer className="py-4 lg:h-[10vh]">
       <div className="flex justify-center items-center py-2 text-xl lg:text-2xl">

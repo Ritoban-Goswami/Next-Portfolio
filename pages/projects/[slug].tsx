@@ -42,6 +42,16 @@ const ptComponents: PortableTextComponents = {
   },
   block: {
     normal: ({ children }) => <p className="mb-3 last:mb-0">{children}</p>,
+    h3: ({ children }) => (
+      <h3 className="heading text-xl sm:text-2xl lg:text-3xl xl:text-[2rem] 2xl:text-5xl w-4/5 md:w-full font-semibold mb-3 xl:mb-6 mt-4 md:mt-8">
+        {children}
+      </h3>
+    ),
+  },
+  list: {
+    bullet: ({ children }) => (
+      <ul className="mt-1 px-4 md:mt-5 list-disc">{children}</ul>
+    ),
   },
 };
 
@@ -76,13 +86,13 @@ export default function Page({
             priority={true}
           />
           <div className="flex justify-between flex-col-reverse gap-y-8 md:flex-row mt-8 md:mt-16">
-            <p className="md:w-8/12 text-sm sm:text-base text-neutral-400">
+            <div className="md:w-8/12 text-sm sm:text-base text-neutral-400">
               {/* {projectDescription} */}
               <PortableText
                 value={projectDescription}
                 components={ptComponents}
               />
-            </p>
+            </div>
             <div className="md:w-4/12 md:flex flex-col items-center">
               <div>
                 <h4 className="text-neutral-600 text-2xl font-bold mb-4">

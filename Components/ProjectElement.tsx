@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { imageUrlFor } from "@/sanity";
-
-// ignoring this type error until fixed
-//@ts-ignore
-import { getDominantColor } from "quantize-colors";
 
 type Props = {
   projectTitle: string;
   projectDesc: [];
   projectShortDesc: string;
-  projectImg: {};
+  projectImg: { url: string; domColor: string };
   projectSlug: string;
   projectInProgress: boolean;
 };
@@ -24,23 +19,12 @@ const ProjectElement = ({
   projectSlug,
   projectInProgress,
 }: Props) => {
-  const [domColor, setDomColor] = useState("");
-  const projectImgUrl = imageUrlFor(projectImg).url();
+  const projectImgUrl = projectImg.url;
+  const domColor = projectImg.domColor;
   const itemVariants = {
     hidden: { opacity: 0 },
     show: { opacity: 1 },
   };
-
-  useEffect(() => {
-    getDominantColor(projectImgUrl)
-      .then((color: string) => {
-        color += "4d";
-        setDomColor(color);
-      })
-      .catch((error: Error) => {
-        console.error("Error:", error);
-      });
-  }, [projectImgUrl]);
 
   return (
     <Link href={`/projects/${encodeURIComponent(projectSlug)}`}>

@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <div className={inter.className}>
-        <Layout pageProps={...pageProps}>
+        <Layout>
           <Component {...pageProps} />
         </Layout>
       </div>

@@ -52,7 +52,7 @@ export interface Project extends SanityBody {
   projectShortDescription: string;
   projectDescription: Array;
   _type: "projects";
-  projectImage: Image;
+  projectImage: { url: string; domColor: string };
   usedTechnologies: Skills[];
   projectInProgress: boolean;
 }

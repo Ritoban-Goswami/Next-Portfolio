@@ -1,9 +1,9 @@
 import Header from "./Header";
 import Footer from "./Footer";
 
-type Props = { children: React.ReactNode; pageProps: any };
+type Props = { children: React.ReactNode };
 
-export default function Layout({ children, pageProps }: Props) {
+export default function Layout({ children }: Props) {
   return (
     <>
       <Header />

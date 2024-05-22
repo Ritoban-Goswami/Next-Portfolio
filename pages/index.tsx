@@ -19,7 +19,6 @@ export default function Home({ pageInfo }: Props) {
         className="mt-20 mb-16 md:mt-24 lg:mt-5 lg:mb-0 lg:h-screen flex items-center justify-center snap-center"
         // className="container mx-auto px-20 h-screen snap-center"
       >
-        {/* <Header /> */}
         <Hero pageInfo={pageInfo} />
       </section>
       <section
@@ -52,7 +51,6 @@ export default function Home({ pageInfo }: Props) {
         // className="container mx-auto px-20 h-screen flex items-center flex-col snap-center"
       >
         <ContactForm />
-        {/* <Footer /> */}
       </section>
     </>
   );

@@ -3,9 +3,9 @@ import About from "@/Components/About";
 import ExperienceSkills from "@/Components/ExperienceSkills";
 import Projects from "@/Components/Projects";
 import ContactForm from "@/Components/ContactForm";
-import { GetServerSideProps, GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 import { PageInfo } from "@/typings";
-import { fetchPageInfo } from "@/utils/fetchPageInfo";
+import { fetchPageInfo, fetchProjectsWithColors } from "@/utils/fetchPageInfo";
 
 type Props = {
   pageInfo: PageInfo;
@@ -56,12 +56,14 @@ export default function Home({ pageInfo }: Props) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo();
+export const getStaticProps: GetStaticProps = async () => {
+  const pageInfo = await fetchPageInfo();
+  pageInfo.projects = await fetchProjectsWithColors(pageInfo.projects);
 
   return {
     props: {
       pageInfo,
     },
+    revalidate: 60,
   };
 };

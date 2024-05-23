@@ -1,49 +1,66 @@
 import { PageInfo, Project } from "@/typings";
-import { imageUrlFor } from "@/sanity";
+import { client, imageUrlFor } from "@/sanity";
 // ignoring this type error until fixed
 //@ts-ignore
 import { getDominantColor } from "quantize-colors";
+import { groq } from "next-sanity";
 
 export const fetchPageInfo = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_SANITY_BASE_URL}/api/getPageInfo`
-  );
-
-  const data = await res.json();
-
-  const projectImagePromises = data.pageInfo.projects.map(
-    async (project: Project) => {
-      const projectImageUrl = imageUrlFor(project.projectImage).url();
-      try {
-        let color = await getDominantColor(projectImageUrl);
-        // Add transparency (4d is 30% transparency in hex)
-        color += "4d";
-        return {
-          ...project,
-          projectImage: {
-            url: projectImageUrl,
-            domColor: color,
-          },
-        };
-      } catch (error) {
-        console.error("Error fetching dominant color:", error);
-        return {
-          ...project,
-          projectImage: {
-            url: projectImageUrl,
-            domColor: "",
-          },
-        };
-      }
+  const query = groq`*[_type=="pageInfo"][0]{
+    name,
+    role,
+    heroImage,
+    about,
+    experiences[]->{
+      _id,
+      jobTitle,
+      description,
+      dateStarted,
+      companyLink
+    },
+    projects[]->{
+      _id,
+      projectImage,
+      projectSlug,
+      projectTitle,
+      projectShortDescription,
+      projectDescription,
+      projectInProgress,
+    },
+    socialLinks[]->{
+      _id,
+      linkTitle,
+      linkUrl
+    },
+    skills[]->{
+      skillName,
+      _id
     }
-  );
+  }`;
 
-  // Wait for all promises to resolve
-  const projectImageUrls = await Promise.all(projectImagePromises);
+  return await client.fetch(query);
+};
 
-  // Log the processed image URLs with dominant colors
-  const pageInfo: PageInfo = data.pageInfo;
-  pageInfo.projects = projectImageUrls;
-  console.log(pageInfo);
-  return pageInfo;
+const fetchProjectWithDominantColor = async (project: Project) => {
+  const projectImageUrl = imageUrlFor(project.projectImage).url();
+  let domColor = "";
+
+  try {
+    const color = await getDominantColor(projectImageUrl);
+    domColor = `${color}4d`; // Adding 30% transparency
+  } catch (error) {
+    console.error("Error fetching dominant color:", error);
+  }
+
+  return {
+    ...project,
+    projectImage: {
+      url: projectImageUrl,
+      domColor,
+    },
+  };
+};
+
+export const fetchProjectsWithColors = async (projects: Project[]) => {
+  return await Promise.all(projects.map(fetchProjectWithDominantColor));
 };

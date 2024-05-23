@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SkillElement from "@/Components/SkillElement";
 import { Project } from "@/typings";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import { client } from "@/sanity";
 import { groq } from "next-sanity";
 import { imageUrlFor } from "@/sanity";
@@ -143,18 +143,18 @@ const query = groq`*[_type == "projects" && projectSlug.current == $slug][0]{
   projectInProgress,
 }`;
 
-// export async function getStaticPaths() {
-//   const paths = await client.fetch(
-//     groq`*[_type == "projects" && defined(projectSlug.current)][].projectSlug.current`
-//   );
+export async function getStaticPaths() {
+  const paths = await client.fetch(
+    groq`*[_type == "projects" && defined(projectSlug.current)][].projectSlug.current`
+  );
 
-//   return {
-//     paths: paths.map((slug: string) => ({ params: { slug } })),
-//     fallback: true,
-//   };
-// }
+  return {
+    paths: paths.map((slug: string) => ({ params: { slug } })),
+    fallback: true,
+  };
+}
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const { slug = "" } = context.params as ParsedUrlQuery;
   const project: Project = await client.fetch(query, { slug });
   const projectImgUrl = imageUrlFor(project.projectImage).url();
@@ -164,5 +164,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       ...project,
       projectImage: projectImgUrl,
     },
+    revalidate: 60,
   };
 };

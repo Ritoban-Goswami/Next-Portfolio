@@ -34,7 +34,7 @@ const ProjectElement = ({
           y: -8,
           transition: { duration: 0.1 },
         }}
-        className="md:relative"
+        className="md:relative md:h-full"
       >
         {projectInProgress && (
           <div className="absolute p-1 tracking-widest text-xs font-semibold opacity-90 bg-red-500 rounded-md top-1 left-1 dark:border-gray-900 z-10">
@@ -42,7 +42,7 @@ const ProjectElement = ({
           </div>
         )}
         <Image
-          className="rounded-md"
+          className="rounded-md h-full"
           src={projectImgUrl}
           alt="Click to go to the project page"
           width={1000}
